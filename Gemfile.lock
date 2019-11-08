@@ -247,6 +247,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll (~> 3.8.5)
+  jekyll-coffeescript
   jekyll-feed (~> 0.6)
   jekyll-include-cache
   jekyll-seo-tag
