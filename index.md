@@ -32,6 +32,11 @@ IDEs
 * Eclipse
 * Android studio 
 
+Control de versiones
+* Git
+* Mercurial 
+* Fossil SCM
+
 Frameworks
 ---
 
