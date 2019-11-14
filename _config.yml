@@ -16,11 +16,9 @@
 title: Erik G. Cardona 
 email: policodigo@gmail.com 
 logo: profile.jpeg       
-description: >- # this means to ignore newlines until "baseurl:"
-        prueba
+description: " Medellin - Colombia"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
+url: "http://policodigo.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: erikhu 
 
 # Build settings
