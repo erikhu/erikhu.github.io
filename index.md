@@ -21,7 +21,9 @@ A partir de la disolución de coviper me enfoque a trabajar en mis propios proye
 Software que utilizo para trabajar
 ---
 Generalmente y en lo posible utilizo herramientas hechas en software libre
- para mis proyectos, uso editores tales 
+ para mis proyectos
+
+Editores
 * Emacs 
 * Nvim 
 * Geany
