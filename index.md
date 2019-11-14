@@ -37,6 +37,12 @@ Control de versiones
 * Mercurial 
 * Fossil SCM
 
+Bases de datos
+* Mongodb
+* Mysql
+* Postgres
+* Redis
+
 Frameworks
 ---
 
