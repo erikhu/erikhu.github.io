@@ -16,7 +16,7 @@ Después aproximadamente en los años 2011 - 2012 empecé mi aprendizaje en el m
 
 La única empresa en la que me he vinculado directamente fue coviper, un emprendimiento que empecé en el año 2015 aproximadamente con un ingeniero que conocí y luego se vinculo otro compañero mas. Trabajamos juntos un tiempo, íbamos muy bien pero por razones personales de uno de los socios que se retiro decidimos disolver coviper.
 
-A partir de la disolución de coviper me enfoque a trabajar en mis propios proyectos y como freelance con los contactos, amistades y mis familiares. Los lenguajes de programación que he aprendido y que expongo en este este apartado es por que he llegado a realizar X cantidad de proyectos con ellos en el transcurso de mi vida. Por lo que seguiré actualizando este contenido periódicamente.
+A partir de la disolución de coviper me enfoque a trabajar en mis propios proyectos y como freelance con los contactos, amistades y mis familiares. Los lenguajes de programación que he aprendido y que expongo en este este espacio es por que he llegado a realizar X cantidad de proyectos con ellos en el transcurso de mi vida. Por lo que seguiré actualizando este contenido periódicamente.
 
 Software que utilizo para trabajar
 ---
