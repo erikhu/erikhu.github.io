@@ -43,6 +43,7 @@ Frameworks
 * Ionic
 * Cordova
 * Libgdx
+* Nodejs
 
 Lenguajes de programacion
 ---
@@ -52,12 +53,11 @@ Lenguajes de programacion
 * Elixir
 * Javascript
 * Lenguage de etiquetas HTML
-* Lenguage de diseno CSS
+* Lenguage de diseno CSS Sass/Scss
 * Kotlin
 * Php
 * Typescript
 * Coffeescript
-* Sass/Scss
 
 En lo que invierto mi tiempo libre
 ---
