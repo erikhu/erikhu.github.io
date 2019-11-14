@@ -62,7 +62,7 @@ Lenguajes de programacion
 En lo que invierto mi tiempo libre
 ---
 
-Desde que empecé a desarrollar software he adquirido un nivel de ingles que me permitía estudiar o leer documentos en ingles para aprender mas cosas sobre el tema de la programación pero últimamente he desarrollado un gusto por los idiomas, por el mero placer de querer entender que dicen y he estado estudiando la forma de aprender idiomas, por lo que estoy en medio de la creación de una herramienta que me permita aprender nuevos idiomas ya que las que encuentro no me convencen. Por supuesto que cuando este lista la compartiré con todos los que quieran aprender un nuevo idioma. 
+Desde que empecé a desarrollar software he adquirido un nivel de ingles que me ha permitido estudiar o leer documentos en ingles(intermedio) para aprender mas cosas sobre el tema de la programación pero últimamente he desarrollado un gusto por los idiomas, por el mero placer de querer entender que dicen y he estado estudiando la forma de aprender idiomas, por lo que estoy en medio de la creación de una herramienta que me permita aprender nuevos idiomas ya que las que encuentro no me convencen. Por supuesto que cuando este lista la compartiré con todos los que quieran aprender un nuevo idioma. 
 
 Que hago actualmente
 ---
