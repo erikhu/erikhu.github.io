@@ -10,7 +10,7 @@ Un poco de mi historia
 ---
 No recuerdo bien fechas exactas pero entre el 2006 y el 2007 tuve mis primeros acercamientos al software libre gracias a que mis hermanos y amigos de ellos en esa época empezaron un proyecto que se llamaba manada libre, en el proyecto manada libre que duro varios años yo también participe un tiempo, fue ahí donde descubrí la importancia de la independencia que debemos tener utilizando software. Desde ahí empezó mi aprendizaje en todo este mundo de la informática, participe en varios cursos y actividades de manada libre en esa época y aprendí a usar GNU/Linux Debian entre otras distribuciones que íbamos cacharreando.
 
-Luego de todo lo que aporto manada libre en mi desarrollo me volví nativo en este tipo de sistemas operativos y desde esas fechas lo uso hasta el dia de hoy para mi uso diario personal y laboral.
+Luego de todo lo que aporto manada libre en mi desarrollo me volví nativo en este tipo de sistemas operativos y desde esas fechas lo uso hasta el dia de hoy para mi uso diario personal y laboral, actualmente uso Arch y Debian.
 
 Aproximadamente en los años 2011 - 2012 empecé mi aprendizaje en el mundo de la programación con Java, mi motivación en ese entonces era hacer mis propios video juegos para Android de los que luego pude publicar en la Playstore, pero al dia de hoy están retirados debido al abandono.
 
@@ -78,4 +78,4 @@ Desde que empecé a desarrollar software he adquirido un nivel de ingles (interm
 Que hago actualmente
 ---
 
-Estudio ingeniería de sistemas en la Universidad Nacional de Colombia por que amo estudiar sea por mi mismo o en la academia, me dedico a mis propios proyectos y hacer trabajos como freelance.
+Estudio ingeniería de sistemas en la Universidad Nacional de Colombia.
