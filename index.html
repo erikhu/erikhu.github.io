@@ -2,86 +2,129 @@
     <head>
         <title>CV</title>
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
+        <script type="text/javascript">
+         var dataJson = fetch('data.json');
+        </script>
     </head>
     <body>
         <header class="flex justify-between h-16 p-2">
-        <h1 class="font-semibold text-2xl mt-auto mb-auto">
-            Erik Gonzalez
-        </h1>
-        <span class="text-sm">
-            Last updated: 2021-03-21
-        </span>
+            <h1 class="font-semibold text-2xl mt-auto mb-auto">
+                Erik Gonzalez
+            </h1>
+            <span class="text-sm">
+                Last updated: 2021-03-21
+            </span>
         </header>
         <div class="grid grid-cols-3 gap-4">
             <section>
                 <h2 class="font-semibold text-lg pl-2">
                     Skills
                 </h2>
-                <div>
+                <div x-data="{
+                             skills: [
+                             'Problem solving',
+                             'Algorithms',
+                             'Software develop',
+                             'Good communication',
+                             'Gnu/Linux native',
+                             'Intermediate english level',
+                             'Spanish native'
+                             ]}">
                     <ul>
-                        <li>Problem solving</li>
-                        <li>Algorithms</li>
-                        <li>Software develop</li>
-                        <li>Good communication</li>
-                        <li>Gnu/Linux native</li>
+                        <template x-for="skill in skills" x-key="skill">
+                            <li x-text="skill"/>
+                        </template>
                     </ul>
                 </div>
                 <h2 class="font-semibold text-lg pl-2">
                     Frameworks
                 </h2>
                 <div>
-                    <ul>
-                        <li>Laravel</li>
-                        <li>Ruby on rails</li>
-                        <li>Phoenixframework</li>
-                        <li>Vuejs</li>
-                        <li>React Native</li>
-                        <li>Android</li>
+                    <ul x-data="{
+                                frameworks: [
+                                'Laravel',
+                                'Ruby on rails',
+                                'Phoenixframework',
+                                'Vuejs',
+                                'React Native',
+                                'Android'
+                                ]
+                                }">
+                        <template x-for="framework in frameworks" x-key="framework">
+                            <li x-text="framework"/>
+                        </template>
                     </ul>
                 </div>
                 <h2 class="font-semibold text-lg pl-2">
                     Languages
                 </h2>
                 <div>
-                    <ul>
-                        <li>Ruby</li>
-                        <li>Php</li>
-                        <li>Elixir</li>
-                        <li>Javascript</li>
-                        <li>Typescript</li>
-                        <li>Java</li>
+                    <ul x-data="{
+                                languages: [
+                                'Ruby',
+                                'Php',
+                                'Elixir',
+                                'Javascript',
+                                'Typescript',
+                                'Java'
+                                ]
+                                }">
+                        <template x-for="lang in languages" x-key="lang">
+                            <li x-text="lang"/>
+                        </template>
                     </ul>
                 </div>
                 <h2 class="font-semibold text-lg pl-2">
                     Tools
                 </h2>
                 <div>
-                    <ul>
-                        <li>Emacs (Evil)</li>
-                        <li>Docker</li>
-                        <li>Terminal/Console</li>
+                    <ul x-data="{
+                                tools: [
+                                'Emacs (Evil)',
+                                'Docker',
+                                'Terminal/Console'
+                                ]
+                                }">
+                        <template x-for="tool in tools" x-key="tool">
+                            <li x-text="tool"/>
+                        </template>
                     </ul>
                 </div>
                 <h2 class="font-semibold text-lg pl-2">
                     Hobbies
                 </h2>
                 <div>
-                    <ul>
-                        <li>Hikking</li>
-                        <li>Read</li>
-                        <li>Animal lover</li>
-                        <li>Anime</li>
-                        <li>Sport</li>
+                    <ul
+                        class="pl-2"
+                        x-data="{
+                                hoobies: [
+                                'Hikking',
+                                'Read',
+                                'Animal lover',
+                                'Anime',
+                                'Sport'
+                                ]
+                                }">
+                        <template x-for="hoobie in hoobies" x-key="hoobie">
+                            <li x-text="hoobie"/>
+                        </template>
                     </ul>
                 </div>
                 <h2 class="font-semibold text-lg pl-2">
                     Favorite books
                 </h2>
                 <div>
-                    <ul>
-                        <li>Object Design</li>
-                        <li>Algorithms by robert sedgewick</li>
-                        <li>Clean code</li>
+                    <ul x-data="{
+                                books: [
+                                'Object Design',
+                                'Algorithms by robert sedgewick',
+                                'Clean code'
+                                ]
+                                }">
+                        <template x-for="book in books" x-key="book">
+                            <li x-text="book"/>
+                        </template>
                     </ul>
                 </div>
             </section>
