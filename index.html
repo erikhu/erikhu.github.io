@@ -87,9 +87,9 @@
                 <template x-for="section in side_sections" x-key="section.title">
                     <div class="pl-2">
                         <h2 class="font-semibold text-lg text-gray-600" x-text="section.title"></h2>
-                        <ul>
+                        <ul class="border-solid border-l-2">
                             <template x-for="item in section.list" x-key="item">
-                                <li class="pl-2" x-text="item"></li>
+                                <li class="pl-2 border-solid border-b-2 lg:w-56" x-text="item"></li>
                             </template>
                         </ul>
                     </div>
@@ -97,12 +97,18 @@
             </section>
             <article>
                 <h2 class="font-semibold text-lg text-gray-600 pl-2">
-                    References
+                    Profile
                 </h2>
+                <p>
+                </p>
                 <h2 class="font-semibold text-lg text-gray-600 pl-2">
                     Projects
                 </h2>
+                <p>
+                </p>
             </article>
         </div>
+        <footer class="h-24 mt-8 bg-gray-700">
+        </footer>
     </body>
 </html>
