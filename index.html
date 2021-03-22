@@ -8,7 +8,7 @@
         <script type="text/javascript">
          var dataJson = {
              "author": "Erik Gonzalez",
-             "last_updated": "2021-03-21",
+             "last_updated": "2021-03-22",
              "side_sections": [
                  {
                      "title": "Skills",
@@ -81,7 +81,7 @@
             <h1 class="font-semibold text-2xl text-gray-700 mt-auto mb-auto" x-text="author"></h1>
             <span class="text-sm" x-text="`Last updated: ${last_updated}`"></span>
         </header>
-        <div class="grid grid-cols-3 gap-4 container mx-auto">
+        <div class="flex container mx-auto">
             <section
                 x-data="{side_sections: dataJson.side_sections}">
                 <template x-for="section in side_sections" x-key="section.title">
@@ -95,17 +95,47 @@
                     </div>
                 </template>
             </section>
-            <article>
-                <h2 class="font-semibold text-lg text-gray-600 pl-2">
+            <article class="ml-2">
+                <h2 class="font-semibold text-lg text-gray-600">
                     Profile
                 </h2>
-                <p>
-                </p>
-                <h2 class="font-semibold text-lg text-gray-600 pl-2">
-                    Projects
+                <div>
+                    <p class="mb-4">
+                        Good quality to hear and take note of the requeriments to some project or task, questioning everything to close the space created by ambiguity.
+                        I always say less is more at this case, less code is more than a big code that resolve the same, in that order of ideas, i always try to use patterns and
+                        code conventions to create a solid solution.I love work with collegues bec
+                    </p>
+                    <p class="mb-4">
+                        I think of myself as a complete software developer because i can work in front end as back end not matter the language, i could teach myself the
+                        language that can be use to solve some problem and use it with the same conventions. Ofcourse a have experiences in several languages as you can see on the sidebar
+                        but it is only a tool like others.
+                    </p>
+                    <p class="mb-4">
+                        I love work with collegues because almost all me life-time as freelance i was alone.
+                        when a i started with picallex the experience with them was very
+                        exciting for me. I learned how their people organize to work on same project
+                        using agile methologies and tools for do it remotely.
+                        The situation of not know how much level the other developers
+                        have as professional. Constantly force me to study-hard and improve me abilities as
+                        software developer and i enjoy it so much.
+                    </p>
+                </div>
+                <h2 class="font-semibold text-lg text-gray-600">
+                    History
                 </h2>
                 <p>
+                    Since 2015 i'm working as freelance, resolving several kind of problems to companies and starting from zero-to-prod projects in
+                    several languages, frameworks and methodoligies. Roughly in the middle of 2015 i created a company with a couple of enginner friends called Coviper,
+                    i was as mobile and web developer there and started me first projects. after that the partners break up the company and each one take his own way.
+                    after disolve coviper i started me way as freelance until 2020 where i started to work from Colombia for Picallex Holding Group a company base on Argentina,
+                    as front end developer but using others skills to create new projects, start the app mobile for the company and other projects to them. until date i work there.
                 </p>
+                <div class="pt-8">
+                    <span class="font-semibold text-md text-gray-800">
+                        Base on:
+                    </span>
+                    Medellin - Colombia
+                </div>
             </article>
         </div>
         <footer class="h-24 mt-8 bg-gray-700">
