@@ -69,21 +69,21 @@ var dataJson = {
         {
             "date": "2014",
             "company": "Neurotec",
-            "role": "Techincal Support",
+            "role": "Technical Support",
             "description": "I gave support to the System fields of a Colombian company.",
             "activities": []
         },
         {
             "date": "2015",
             "company": "Coviper",
-            "role": "Software developer",
+            "role": "Software Developer",
             "description": "A company that I was founded with a couple of friends and I did web pages with WordPress, created plugins and mobile apps in Java.",
             "activities": []
         },
         {
             "date": "2017",
             "company": "Freelance",
-            "role": "Software developer",
+            "role": "Software Developer",
             "description": "I developed several web projects using docker and Mobile apps like",
             "activities": [
                 "Apartado Stereo (App in ionic) with a basic Laravel web to admin some stuff that the app used by API.",
