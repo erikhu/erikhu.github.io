@@ -3,91 +3,54 @@
         <title>CV</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
-        <script type="text/javascript">
-         var dataJson = {
-             "author": "Erik Gonzalez",
-             "last_updated": "2021-03-22",
-             "side_sections": [
-                 {
-                     "title": "Skills",
-                     "list": [
-                         "Problem solving",
-                         "Algorithms",
-                         "Software develop",
-                         "Good communication",
-                         "Gnu/Linux native",
-                         "Intermediate english level",
-                         "Spanish native"
-                     ],
-                 },
-                 {
-                     "title": "Frameworks",
-                     "list": [
-                         "Laravel",
-                         "Ruby on rails",
-                         "Phoenixframework",
-                         "Vuejs",
-                         "React Native",
-                         "Android"
-                     ],
-                 },
-                 {
-                    "title": "Languages",
-                     "list": [
-                         "Ruby",
-                         "Php",
-                         "Elixir",
-                         "Javascript",
-                         "Typescript",
-                         "Java"
-                     ],
-                 },
-                 {
-                     "title": "Tools",
-                     "list": [
-                         "Emacs (Evil)",
-                         "Docker",
-                         "Terminal/Console"
-                     ],
-                 },
-                 {
-                     "title": "Hoobies",
-                     "list": [
-                         "Hikking",
-                         "Read",
-                         "Animal lover",
-                         "Anime",
-                         "Sport"
-                     ]
-                 },
-                 {
-                     "title": "Favorite books",
-                     "list": [
-                         "Object Design",
-                         "Algorithms by robert sedgewick",
-                         "Clean code"
-                     ]
-                 }
-             ],
-         };
-        </script>
+        <script type="text/javascript" language="javascript" src="data.js"></script>
     </head>
-    <body>
+    <body >
         <header
-            x-data="{ author: dataJson.author, last_updated: dataJson.last_updated}"
-            class="flex justify-between h-16 p-2 container mx-auto">
-            <h1 class="font-semibold text-2xl text-gray-700 mt-auto mb-auto" x-text="author"></h1>
-            <span class="text-sm" x-text="`Last updated: ${last_updated}`"></span>
+            x-data="{ author: dataJson.author, currentRole: dataJson.currentRole}"
+            class="flex justify-between p-4 mb-2 mx-auto bg-gray-700">
+            <span>
+                <h1 class="font-semibold text-2xl text-gray-100 mt-auto mb-auto" x-text="author"></h1>
+                <h2 class="font-semibold text-lg text-gray-50 m-auto" x-text="currentRole"></h2>
+            </span>
         </header>
-        <div class="flex container mx-auto">
+        <div class="lg:flex container mx-auto">
+            <article class="ml-2">
+                <h2 class="font-semibold text-lg text-gray-600">
+                    Profile
+                </h2>
+                <div x-data="{bio: dataJson.bio}">
+                    <p class="mb-4" x-text="bio"></p>
+                </div>
+                <h2 class="font-semibold text-lg text-gray-600">
+                    About my experience
+                </h2>
+                <div x-data="{experiences: dataJson.experiences}">
+                    <template x-for="experience in experiences" x-key="experience.date">
+                        <div class="mb-4">
+                            <div class="flex">
+                                <span x-text="experience.date" class="mr-2"></span>
+                                <p x-text="experience.company"></p>
+                            </div>
+                            <p class="italic" x-text="experience.role"></p>
+                            <p x-text="experience.description"></p>
+                            <ul class="list-disc pl-8">
+                                <template x-for="activity in experience.activities">
+                                    <li x-text="activity" class="mb-2"></li>
+                                </template>
+                            </ul>
+                        </div>
+                    </template>
+                </div>
+            </article>
             <section
                 x-data="{side_sections: dataJson.side_sections}">
                 <template x-for="section in side_sections" x-key="section.title">
                     <div class="pl-2">
                         <h2 class="font-semibold text-lg text-gray-600" x-text="section.title"></h2>
-                        <ul class="border-solid border-l-2">
+                        <ul class="border-solid border-r-2 border-l-2 border-t-2">
                             <template x-for="item in section.list" x-key="item">
                                 <li class="pl-2 border-solid border-b-2 lg:w-56" x-text="item"></li>
                             </template>
@@ -95,50 +58,19 @@
                     </div>
                 </template>
             </section>
-            <article class="ml-2">
-                <h2 class="font-semibold text-lg text-gray-600">
-                    Profile
-                </h2>
-                <div>
-                    <p class="mb-4">
-                        Good quality to hear and take note of the requeriments to some project or task, questioning everything to close the space created by ambiguity.
-                        I always say less is more at this case, less code is more than a big code that resolve the same, in that order of ideas, i always try to use patterns and
-                        code conventions to create a solid solution.
-                    </p>
-                    <p class="mb-4">
-                        I think of myself as a complete software developer because i can work in front end as back end not matter the language, i could teach myself the
-                        language that can be use to solve some problem and use it with the same conventions. Ofcourse a have experiences in several languages as you can see on the sidebar
-                        but it is only a tool like others.
-                    </p>
-                    <p class="mb-4">
-                        I love work with collegues because almost all me life-time as freelance i was alone.
-                        when a i started with picallex the experience with them was very
-                        exciting for me. I learned how their people organize to work on same project
-                        using agile methologies and tools for do it remotely.
-                        The situation of not know how much level the other developers
-                        have as professional. Constantly force me to study-hard and improve me abilities as
-                        software developer and i enjoy it so much.
-                    </p>
-                </div>
-                <h2 class="font-semibold text-lg text-gray-600">
-                    History
-                </h2>
-                <p>
-                    Since 2015 i'm working as freelance, resolving several kind of problems to companies and starting from zero-to-prod projects in
-                    several languages, frameworks and methodoligies. Roughly in the middle of 2015 i created a company with a couple of enginner friends called Coviper,
-                    i was as mobile and web developer there and started me first projects. after that the partners break up the company and each one take his own way.
-                    after disolve coviper i started me way as freelance until 2020 where i started to work from Colombia for Picallex Holding Group a company base on Argentina,
-                    as front end developer but using others skills to create new projects, start the app mobile for the company and other projects to them. until date i work there.
-                </p>
-                <div class="pt-8">
-                    <span class="font-semibold text-md text-gray-800">
-                        Base on:
-                    </span>
-                    Medellin - Colombia
-                </div>
-            </article>
         </div>
-        <footer class="h-24 mt-8 bg-gray-700">
+        <footer
+            x-data="{last_updated: dataJson.last_updated}"
+            class="flex justify-between py-2 mt-4 px-4 bg-gray-700">
+            <div class="flex">
+                <a href="https://www.linkedin.com/in/erik-alexander-gonzalez-cardona-b7b03a118" target="_blank">
+                    <svg role="img" class="h-6 w-6 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://github.com/erikhu" target="_blank" class="ml-2">
+                    <svg role="img" class="h-6 w-6 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                </a>
+            </div>
+            <span class="text-sm text-gray-50" x-text="`Last updated: ${last_updated}`"></span>
         </footer>
     </body>
 </html>
