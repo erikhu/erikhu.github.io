@@ -1,7 +1,7 @@
 var dataJson = {
     "author": "Erik Gonzalez",
     "currentRole": "Full-Stack",
-    "last_updated": "2022-01-15",
+    "last_updated": "2022-02-01",
     "side_sections": [
         {
             "title": "Skills",
@@ -78,7 +78,9 @@ var dataJson = {
             "company": "Coviper",
             "role": "Software Developer",
             "description": "A company that I was founded with a couple of friends and I did web pages with WordPress, created plugins and mobile apps in Java.",
-            "activities": []
+            "activities": [
+                "Technologies employed: Wordpress, Php, Java, Javascript, Html, CSS, Git"
+            ]
         },
         {
             "date": "2017",
@@ -90,15 +92,16 @@ var dataJson = {
                 "Callvision (frontend) was made in ionic with angular 4.",
                 "I-Lead web app to create e-cards, I made in RoR and dockerized.",
                 "Alentreno was another platform made in RoR and dockerized.",
-                "RadiosFlow more than 30 apps of many countries created to hear broadcasting radio stations in my free time. I have made a command line to automatize the deployment and compilation of all the apps with the same app in ruby."
+                "RadiosFlow more than 30 apps, It was created to hear broadcasting radio stations by country, in my free time. I have made a command line to automatize the deployment and compilation of all the apps in ruby.",
+                "Technologies employed: Ruby on Rails, Javascript, Ionic, Angular, Docker, Laravel, Java, Kotlin, Html, CSS, Bootstrap, Material Design, Java, Git"
             ]
         },
         {
             "date": "2020",
             "company": "PicallEx",
             "role": "Full-Stack",
-            "description": "I create several projects in the company working. I have to test and use Php, Elixir, Js, Html, Css, Ts in my daily to add new functionalities, maintain projects and create new ones. I worked with Real-time applications using phoenix elixir and Vuejs connecting through WebSockets.  I have to maintain projects with several frameworks like React native, Vuejs, Phoenixframework, and Laravel. Also, I contribute to the main project of the company and  API of the working under the rules based on the domain required.",
-            "activities": []
+            "description": "As a Full-Stack developer in the company, I have created several projects in-house. Improving the code quality and creating new features. These projects were created achiving the standards of the company using unit testing and integrations.",
+            "activities": ["I am responsible of the maintaining of the API, used by the in-house projects and partners companies. Continusly I am contributing to the CRM, the main project of the company. The app mobile that helps with the deliveries of the drivers and the telephony panel created in-house by me using modern technolgies in real-time and concurrencies processes.", "Technologies employed: Php, Javascript, Typescript, Elixir, Docker, PhoenixFramework, Laravel, Websockets, React Native, Vuejs, Tailwindcss, Html, CSS, Git"]
         }
     ]
 }
