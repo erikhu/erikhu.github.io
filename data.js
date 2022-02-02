@@ -101,7 +101,7 @@ var dataJson = {
             "company": "PicallEx",
             "role": "Full-Stack",
             "description": "As a Full-Stack developer in the company, I have created several projects in-house. Improving the code quality and creating new features. These projects were created achiving the standards of the company using unit testing and integrations.",
-            "activities": ["I am responsible of the maintaining of the API, used by the in-house projects and partners companies. Continusly I am contributing to the CRM, the main project of the company. The app mobile that helps with the deliveries of the drivers and the telephony panel created in-house by me using modern technolgies in real-time and concurrencies processes.", "Technologies employed: Php, Javascript, Typescript, Elixir, Docker, PhoenixFramework, Laravel, Websockets, React Native, Vuejs, Tailwindcss, Html, CSS, Git"]
+            "activities": ["I am responsible of the maintaining of the API, used by the in-house projects and partners companies. Continusly I am contributing to the CRM, the main project of the company. The app mobile that helps with the deliveries of the drivers and the telephony panel created in-house by me using modern technolgies in real-time and concurrency processes.", "Technologies employed: Php, Javascript, Typescript, Elixir, Docker, PhoenixFramework, Laravel, Websockets, React Native, Vuejs, Tailwindcss, Html, CSS, Git"]
         }
     ]
 }
