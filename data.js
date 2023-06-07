@@ -1,7 +1,7 @@
 var dataJson = {
     "author": "Erik Gonzalez",
     "currentRole": "Full-Stack",
-    "last_updated": "2022-02-01",
+    "last_updated": "2023-06-07",
     "side_sections": [
         {
             "title": "Skills",
