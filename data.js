@@ -64,7 +64,7 @@ var dataJson = {
             ]
         }
     ],
-    "bio": "Welcome, I will tell you a bit about me. I am a guy that loves learning new things about Tech and Software.  I always try to see the news about the open-source community and big companies in general related to tech. I learn as an autodidact, self-study is my way to learn everything, I prefer to read technical books. Always I am reading some book related to software architecture, language, or just new proposals related to software. My native language is Spanish, but I have conversational English. I am open for learn some new human or computer languages too. Another thing that I enjoy is being close with many kinds of people, having good vibes, and sharing ideas, knowledge, or just a normal chat. If you would like, we can take a little talk about software at any time just tell me with some time, I enjoy that kind of conversation.",
+    "bio": "Welcome, I will tell you a bit about me. I am a guy that loves learning about new things about Tech and Software.  I always try to see the news about the open-source community and big companies in general related to tech. I learn as an autodidact, self-study is my way to learn everything, I prefer to read technical books. Always I am reading some book related to software architecture, language, or just new proposals related to software. My native language is Spanish, but I have conversational English. I am open for learn some new human or computer languages too. Another thing that I enjoy is being close with many kinds of people, having good vibes, and sharing ideas, knowledge, or just a normal chat. If you would like, we can take a little talk about software at any time just tell me with some time, I enjoy that kind of conversation.",
     "experiences": [
         {
             "date": "2014",
@@ -97,11 +97,20 @@ var dataJson = {
             ]
         },
         {
-            "date": "2020",
+            "date": "2020 - 2022",
             "company": "PicallEx",
             "role": "Full-Stack",
             "description": "As a Full-Stack developer in the company, I have created several projects in-house. Improving the code quality and creating new features. These projects were created achiving the standards of the company using unit testing and integrations.",
             "activities": ["I am responsible of the maintaining of the API, used by the in-house projects and partners companies. Continusly I am contributing to the CRM, the main project of the company. The app mobile that helps with the deliveries of the drivers and the telephony panel created in-house by me using modern technolgies in real-time and concurrency processes.", "Technologies employed: Php, Javascript, Typescript, Elixir, Docker, PhoenixFramework, Laravel, Websockets, React Native, Vuejs, Tailwindcss, Html, CSS, Git"]
+        },
+        {
+            "date": "2022 - Present",
+            "company": "Yolo Group - Hub88",
+            "role": "Elixir Backend",
+            "description": "I'm part of the core team where the guys have a big picture of the business and projects around it. My main focus in the team has been contributing and keeping stable our main core project, a game aggregator that handles millions of transactions by month. Also, I’ve contributed to our back-office projects where it's been used techonolgies like Graphql, RabbitMQ and Keycloak doing integrations with those services and extending the domain logic. As well, as part of the core team, I have to support our tech ops team with critical situations. Furthermore, I've contributed with the design of new highly scalable projects into the team.",
+            "activities": [
+                "Technologies employed: Elixir, RabbitMQ, Docker, PhoenixFramework, Keycloak, Postgres, GraphQL, Git"
+            ]
         }
     ]
 }
