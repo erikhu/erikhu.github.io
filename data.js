@@ -1,116 +1,113 @@
 var dataJson = {
-    "author": "Erik Gonzalez",
-    "currentRole": "Full-Stack",
-    "last_updated": "2023-06-07",
-    "side_sections": [
-        {
-            "title": "Skills",
-            "list": [
-                "Problem solving",
-                "Algorithms",
-                "Software develop",
-                "Good communication",
-                "Gnu/Linux native",
-                "Intermediate english level",
-                "Spanish native"
-            ],
-        },
-        {
-            "title": "Frameworks",
-            "list": [
-                "Laravel",
-                "Ruby on rails",
-                "Phoenixframework",
-                "Vuejs",
-                "React Native",
-                "Android"
-            ],
-        },
-        {
-            "title": "Languages",
-            "list": [
-                "Ruby",
-                "Php",
-                "Elixir",
-                "Javascript",
-                "Typescript",
-                "Java"
-            ],
-        },
-        {
-            "title": "Tools",
-            "list": [
-                "Emacs (Evil)",
-                "Docker",
-                "Terminal/Console"
-            ],
-        },
-        {
-            "title": "Hoobies",
-            "list": [
-                "Hikking",
-                "Read",
-                "Animal lover",
-                "Anime",
-                "Sport"
-            ]
-        },
-        {
-            "title": "Favorite books",
-            "list": [
-                "Object Design",
-                "Algorithms by robert sedgewick",
-                "Clean code"
-            ]
-        }
-    ],
-    "bio": "Welcome, I will tell you a bit about me. I am a guy that loves learning about new things about Tech and Software.  I always try to see the news about the open-source community and big companies in general related to tech. I learn as an autodidact, self-study is my way to learn everything, I prefer to read technical books. Always I am reading some book related to software architecture, language, or just new proposals related to software. My native language is Spanish, but I have conversational English. I am open for learn some new human or computer languages too. Another thing that I enjoy is being close with many kinds of people, having good vibes, and sharing ideas, knowledge, or just a normal chat. If you would like, we can take a little talk about software at any time just tell me with some time, I enjoy that kind of conversation.",
-    "experiences": [
-        {
-            "date": "2014",
-            "company": "Neurotec",
-            "role": "Technical Support",
-            "description": "I gave support to the System fields of a Colombian company.",
-            "activities": []
-        },
-        {
-            "date": "2015",
-            "company": "Coviper",
-            "role": "Software Developer",
-            "description": "A company that I was founded with a couple of friends and I did web pages with WordPress, created plugins and mobile apps in Java.",
-            "activities": [
-                "Technologies employed: Wordpress, Php, Java, Javascript, Html, CSS, Git"
-            ]
-        },
-        {
-            "date": "2017",
-            "company": "Freelance",
-            "role": "Software Developer",
-            "description": "I developed several web projects using docker and Mobile apps like",
-            "activities": [
-                "Apartado Stereo (App in ionic) with a basic Laravel web to admin some stuff that the app used by API.",
-                "Callvision (frontend) was made in ionic with angular 4.",
-                "I-Lead web app to create e-cards, I made in RoR and dockerized.",
-                "Alentreno was another platform made in RoR and dockerized.",
-                "RadiosFlow more than 30 apps, It was created to hear broadcasting radio stations by country, in my free time. I have made a command line to automatize the deployment and compilation of all the apps in ruby.",
-                "Technologies employed: Ruby on Rails, Javascript, Ionic, Angular, Docker, Laravel, Java, Kotlin, Html, CSS, Bootstrap, Material Design, Java, Git"
-            ]
-        },
-        {
-            "date": "2020 - 2022",
-            "company": "PicallEx",
-            "role": "Full-Stack",
-            "description": "As a Full-Stack developer in the company, I have created several projects in-house. Improving the code quality and creating new features. These projects were created achiving the standards of the company using unit testing and integrations.",
-            "activities": ["I am responsible of the maintaining of the API, used by the in-house projects and partners companies. Continusly I am contributing to the CRM, the main project of the company. The app mobile that helps with the deliveries of the drivers and the telephony panel created in-house by me using modern technolgies in real-time and concurrency processes.", "Technologies employed: Php, Javascript, Typescript, Elixir, Docker, PhoenixFramework, Laravel, Websockets, React Native, Vuejs, Tailwindcss, Html, CSS, Git"]
-        },
-        {
-            "date": "2022 - Present",
-            "company": "Yolo Group - Hub88",
-            "role": "Elixir Backend",
-            "description": "I'm part of the core team where the guys have a big picture of the business and projects around it. My main focus in the team has been contributing and keeping stable our main core project, a game aggregator that handles millions of transactions by month. Also, I’ve contributed to our back-office projects where it's been used techonolgies like Graphql, RabbitMQ and Keycloak doing integrations with those services and extending the domain logic. As well, as part of the core team, I have to support our tech ops team with critical situations. Furthermore, I've contributed with the design of new highly scalable projects into the team.",
-            "activities": [
-                "Technologies employed: Elixir, RabbitMQ, Docker, PhoenixFramework, Keycloak, Postgres, GraphQL, Git"
-            ]
-        }
-    ]
-}
+  author: "Erik Gonzalez",
+  currentRole: "Full-Stack Developer",
+  last_updated: "2025-09-24",
+  side_sections: [
+    {
+      title: "Skills",
+      list: [
+        "Problem solving",
+        "Algorithms",
+        "Software development",
+        "Good communication",
+        "GNU/Linux native",
+        "Intermediate English level",
+        "Native Spanish",
+      ],
+    },
+    {
+      title: "Frameworks",
+      list: [
+        "Laravel",
+        "Ruby on Rails",
+        "Phoenix Framework",
+        "Vue.js",
+        "React Native",
+        "Android",
+      ],
+    },
+    {
+      title: "Languages",
+      list: ["Ruby", "PHP", "Elixir", "JavaScript", "TypeScript", "Java"],
+    },
+    {
+      title: "Tools",
+      list: ["Emacs (Evil)", "Docker", "Terminal/Console"],
+    },
+    {
+      title: "Hobbies",
+      list: ["Hiking", "Reading", "Animal lover", "Anime", "Sports"],
+    },
+    {
+      title: "Favorite books",
+      list: ["Object Design", "Algorithms by Robert Sedgewick", "Clean Code"],
+    },
+  ],
+  bio: "Welcome! Here’s a bit about me. I’m passionate about learning new things in technology and software. I follow news from the open‑source community and the broader tech industry. I’m largely self‑taught and prefer learning from technical books, so I’m usually reading something about software architecture, programming languages, or new proposals in software. My native language is Spanish, and I have conversational English. I’m open to learning new human or computer languages as well. I also enjoy being around people, sharing ideas and knowledge, and having good conversations. If you’d like to talk about software, let me know—I’m always up for it.",
+  experiences: [
+    {
+      date: "2014",
+      company: "Neurotec",
+      role: "Technical Support",
+      description:
+        "Provided technical support for company systems at a Colombian firm.",
+      activities: [],
+    },
+    {
+      date: "2015",
+      company: "Coviper",
+      role: "Software Developer",
+      description:
+        "A company I co-founded with a couple of friends. I built WordPress websites, created plugins, and developed mobile apps in Java.",
+      activities: [
+        "Technologies employed: WordPress, PHP, Java, JavaScript, HTML, CSS, Git",
+      ],
+    },
+    {
+      date: "2017",
+      company: "Freelance",
+      role: "Software Developer",
+      description:
+        "I developed several web projects using Docker and mobile apps such as:",
+      activities: [
+        "Apartado Stereo (Ionic app) with a basic Laravel web admin used by the app via API.",
+        "CallVision (frontend) built in Ionic with Angular 4.",
+        "I-Lead web app to create e-cards, built in Ruby on Rails and containerized with Docker.",
+        "Alentreno platform built in Ruby on Rails and containerized with Docker.",
+        "RadiosFlow: more than 30 apps to listen to radio stations by country, built in my free time. I created a command-line tool in Ruby to automate deployment and compilation of all the apps.",
+        "Technologies employed: Ruby on Rails, JavaScript, Ionic, Angular, Docker, Laravel, Java, Kotlin, HTML, CSS, Bootstrap, Material Design, Java, Git",
+      ],
+    },
+    {
+      date: "2020 - 2022",
+      company: "PicallEx",
+      role: "Full-Stack",
+      description:
+        "As a Full-Stack developer, I created several in-house projects, improved code quality, and added new features. These projects were built to meet company standards using unit and integration tests.",
+      activities: [
+        "I am responsible for maintaining the API used by in-house projects and partner companies. I continuously contribute to the CRM, the company’s main project. I built the mobile app that helps drivers with deliveries and an in-house telephony panel using modern technologies for real-time and concurrent processes.",
+        "Technologies employed: PHP, JavaScript, TypeScript, Elixir, Docker, Phoenix Framework, Laravel, WebSockets, React Native, Vue.js, Tailwind CSS, HTML, CSS, Git",
+      ],
+    },
+    {
+      date: "2022 - 2024",
+      company: "Yolo Group - Hub88",
+      role: "Elixir Backend",
+      description:
+        "I'm part of the core team with a broad view of the business and related projects. My main focus has been contributing to and keeping our core project stable—a game aggregator that handles millions of transactions per month. I've also contributed to our back-office projects, integrating technologies like GraphQL, RabbitMQ, and Keycloak, and extending the domain logic. As part of the core team, I also support our Tech Ops team during critical situations. Furthermore, I've contributed to the design of new highly scalable projects.",
+      activities: [
+        "Technologies employed: Elixir, RabbitMQ, Docker, Phoenix Framework, Keycloak, PostgreSQL, GraphQL, Git, Kibana",
+      ],
+    },
+    {
+      date: "2024 - present",
+      company: "Yolo Group - Partners.io",
+      role: "Senior Software Engineer",
+      description:
+        "As part of the Partners.io team, I'm responsible for planning and delivering projects, and I handle management tasks such as onboarding another senior engineer to the projects we are assigned. I also help maintain a platform that handles a high volume of transactions from different brands, ensuring seamless integration and efficient processing. Additionally, I safeguard the codebase by enforcing best practices and agreed coding standards. I took ownership of a legacy project with no dedicated team that was still in production and modernized it to reactivate it for development purposes. My role on the team is primarily full‑stack, contributing to every part of the project—from backend to frontend—to ensure a seamless user experience. I also have the opportunity to mentor junior engineers and provide guidance on best practices and coding standards.",
+      activities: [
+        "Technologies employed: Elixir, Docker, Phoenix Framework, Clickhouse, PostgreSQL, Git, Clickhouse",
+      ],
+    },
+  ],
+};

@@ -1,83 +1,540 @@
-<html>
+<!doctype html>
+<html lang="en" class="scroll-smooth" data-theme="light">
     <head>
-        <title>Erik CV</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
-        <script type="text/javascript" language="javascript" src="data.js"></script>
+        <meta charset="utf-8" />
+        <title>Erik CV — Professional Resume</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light dark" />
+        <meta
+            name="description"
+            content="Professional resume for Erik — software engineer. Experience, skills, and contact information."
+        />
+        <link
+            rel="icon"
+            href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">💼</text></svg>'
+        />
+
+        <!-- DaisyUI + Tailwind v4 CDN -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@5"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+
+        <!-- Apply saved/system theme early to avoid a flash of incorrect theme -->
+        <script>
+            (function () {
+                try {
+                    var key = "theme";
+                    var saved = localStorage.getItem(key);
+                    var prefersDark =
+                        window.matchMedia &&
+                        window.matchMedia("(prefers-color-scheme: dark)")
+                            .matches;
+                    var applied = saved || (prefersDark ? "dark" : "light");
+                    document.documentElement.setAttribute(
+                        "data-theme",
+                        applied,
+                    );
+                } catch (_) {}
+            })();
+        </script>
+
+        <!-- Tailwind config (optional customization) -->
+        <script>
+            window.tailwind = window.tailwind || {};
+            window.tailwind.config = {
+                theme: { extend: {} },
+            };
+        </script>
+
+        <style>
+            [x-cloak] {
+                display: none !important;
+            }
+            @media print {
+                a[href^="http"]::after {
+                    content: "";
+                } /* Avoid verbose URLs on print */
+            }
+        </style>
+
+        <script src="data.js" defer></script>
+        <script
+            src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js"
+            defer
+        ></script>
     </head>
-    <body >
-        <header
-            x-data="{ author: dataJson.author, currentRole: dataJson.currentRole}"
-            class="flex justify-between p-4 mb-2 mx-auto bg-gray-700">
-            <span>
-                <h1 class="font-semibold text-2xl text-gray-100 mt-auto mb-auto" x-text="author"></h1>
-                <h2 class="font-semibold text-lg text-gray-50 m-auto" x-text="currentRole"></h2>
-            </span>
+
+    <body
+        x-data="dataJson"
+        x-cloak
+        class="antialiased bg-base-100 text-base-content"
+    >
+        <noscript>
+            <div class="alert alert-warning rounded-none">
+                This page uses JavaScript to render resume content. Please
+                enable JavaScript.
+            </div>
+        </noscript>
+
+        <!-- Header / Hero -->
+        <header class="relative overflow-hidden">
+            <div
+                class="hero min-h-[220px] bg-base-200 text-base-content print:bg-base-100 print:text-base-content"
+            >
+                <div class="absolute inset-0 pointer-events-none opacity-20">
+                    <div
+                        class="h-full w-full"
+                        style="
+                            background:
+                                radial-gradient(
+                                    500px 180px at 10% 10%,
+                                    rgba(255, 255, 255, 0.25),
+                                    transparent
+                                ),
+                                radial-gradient(
+                                    500px 180px at 90% 90%,
+                                    rgba(255, 255, 255, 0.15),
+                                    transparent
+                                );
+                        "
+                    ></div>
+                </div>
+
+                <div class="hero-content w-full max-w-5xl z-10">
+                    <div class="w-full">
+                        <!-- Top bar with actions -->
+                        <div class="navbar px-0 mb-4 print:hidden">
+                            <div class="navbar-start"></div>
+                            <div class="navbar-end gap-2">
+                                <a
+                                    class="btn btn-sm btn-primary text-primary-content"
+                                    href="mailto:erikhuboy@gmail.com"
+                                    aria-label="Email Erik"
+                                >
+                                    <svg
+                                        class="h-4 w-4"
+                                        fill="currentColor"
+                                        viewBox="0 0 24 24"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            d="M1.5 6.75A2.25 2.25 0 0 1 3.75 4.5h16.5a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 20.25 19.5H3.75A2.25 2.25 0 0 1 1.5 17.25V6.75Zm2.7-.75a.75.75 0 0 0-.45 1.35l7.2 5.4a.75.75 0 0 0 .9 0l7.2-5.4a.75.75 0 0 0-.45-1.35H4.2Z"
+                                        />
+                                    </svg>
+                                    Email
+                                </a>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-sm btn-outline"
+                                    onclick="window.print()"
+                                    aria-label="Print this resume"
+                                >
+                                    <svg
+                                        class="h-4 w-4"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            d="M6 2a2 2 0 0 0-2 2v2h16V4a2 2 0 0 0-2-2H6Zm14 7H4a2 2 0 0 0-2 2v5h4v4h12v-4h4v-5a2 2 0 0 0-2-2ZM8 20v-5h8v5H8Z"
+                                        />
+                                    </svg>
+                                    Print
+                                </button>
+
+                                <!-- Theme toggle (Light/Dark) -->
+                                <button
+                                    type="button"
+                                    class="btn btn-sm btn-ghost"
+                                    aria-label="Toggle theme"
+                                    title="Toggle light/dark mode"
+                                    onclick="(function(){var el=document.documentElement;var next=el.getAttribute('data-theme')==='dark'?'light':'dark';el.setAttribute('data-theme',next);try{localStorage.setItem('theme',next);}catch(_){}})()"
+                                >
+                                    <svg
+                                        class="h-4 w-4 inline-block"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            d="M21.752 15.002A9.718 9.718 0 0 1 12 21.75c-5.385 0-9.75-4.365-9.75-9.75 0-4.214 2.685-7.802 6.45-9.173a.75.75 0 0 1 .967.967A8.25 8.25 0 1 0 21.75 14.25a.75.75 0 0 1 .002.752Z"
+                                        />
+                                    </svg>
+                                    <span class="hidden md:inline">Theme</span>
+                                </button>
+
+                                <a
+                                    href="https://www.linkedin.com/in/erik-alexander-gonzalez-cardona-b7b03a118"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="btn btn-sm btn-ghost btn-square"
+                                    aria-label="LinkedIn"
+                                >
+                                    <svg
+                                        class="h-5 w-5 fill-current"
+                                        role="img"
+                                        viewBox="0 0 24 24"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                                        />
+                                    </svg>
+                                </a>
+                                <a
+                                    href="https://github.com/erikhu"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="btn btn-sm btn-ghost btn-square"
+                                    aria-label="GitHub"
+                                >
+                                    <svg
+                                        class="h-5 w-5 fill-current"
+                                        role="img"
+                                        viewBox="0 0 24 24"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                                        />
+                                    </svg>
+                                </a>
+                                <a
+                                    href="https://play.google.com/store/apps/developer?id=Policodigo"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="btn btn-sm btn-ghost btn-square"
+                                    aria-label="Google Play"
+                                >
+                                    <svg
+                                        class="h-5 w-5 fill-current"
+                                        role="img"
+                                        viewBox="0 0 24 24"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Name / Role -->
+                        <div
+                            class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6"
+                        >
+                            <div>
+                                <h1
+                                    class="text-3xl sm:text-4xl font-extrabold tracking-tight"
+                                    x-text="author"
+                                ></h1>
+                                <p
+                                    class="mt-1 opacity-90 text-base sm:text-lg"
+                                    x-text="currentRole"
+                                ></p>
+                                <p
+                                    class="mt-3 max-w-2xl opacity-80 text-sm sm:text-base"
+                                >
+                                    From Anywhere · Open to opportunities
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </header>
-        <div class="lg:flex container mx-auto">
-            <article class="ml-2">
-                <h2 class="font-semibold text-lg text-gray-600">
+
+        <!-- Main -->
+        <main class="max-w-5xl mx-auto px-4 py-8 sm:py-10 print:py-0">
+            <!-- Profile -->
+            <section aria-labelledby="profile-title" class="mb-8">
+                <h2 id="profile-title" class="text-xl font-semibold">
                     Profile
                 </h2>
-                <div x-data="{bio: dataJson.bio}">
-                    <p class="mb-4" x-text="bio"></p>
-                </div>
-                <h2 class="font-semibold text-lg text-gray-600">
-                    About my experience
-                </h2>
-                <div x-data="{experiences: dataJson.experiences}">
-                    <template x-for="experience in experiences" x-key="experience.date">
-                        <div class="mb-4">
-                            <div class="flex">
-                                <span x-text="experience.date" class="mr-2"></span>
-                                <p x-text="experience.company"></p>
-                            </div>
-                            <p class="italic" x-text="experience.role"></p>
-                            <p x-text="experience.description"></p>
-                            <ul class="list-disc pl-8">
-                                <template x-for="activity in experience.activities">
-                                    <li x-text="activity" class="mb-2"></li>
-                                </template>
-                            </ul>
-                        </div>
-                    </template>
-                </div>
-                <a class="hover:underline" href="mailto:erikhuboy@gmail.com">
-                    Mail me to: <br/> erikhuboy@gmail.com
-                </a>
-            </article>
-            <section
-                x-data="{side_sections: dataJson.side_sections}">
-                <template x-for="section in side_sections" x-key="section.title">
-                    <div class="pl-2">
-                        <h2 class="font-semibold text-lg text-gray-600" x-text="section.title"></h2>
-                        <ul class="border-solid border-r-2 border-l-2 border-t-2">
-                            <template x-for="item in section.list" x-key="item">
-                                <li class="pl-2 border-solid border-b-2 lg:w-56" x-text="item"></li>
+                <p class="mt-3 leading-7" x-text="bio"></p>
+            </section>
+
+            <!-- Grid: Experience + Side sections -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Experience Timeline -->
+                <section
+                    aria-labelledby="experience-title"
+                    class="lg:col-span-2"
+                >
+                    <div class="flex items-center justify-between">
+                        <h2 id="experience-title" class="text-xl font-semibold">
+                            Experience
+                        </h2>
+                    </div>
+
+                    <div class="mt-4">
+                        <ul
+                            class="timeline timeline-snap-icon max-md:timeline-compact timeline-horizontal"
+                        >
+                            <template
+                                x-for="(experience, i) in experiences"
+                                x-key="experience.date + experience.company"
+                            >
+                                <li>
+                                    <template x-if="i > 0"><hr /></template>
+                                    <div class="timeline-middle">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            class="h-5 w-5 text-primary"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                                                clip-rule="evenodd"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <template x-if="i % 2 === 0">
+                                        <div class="timeline-start">
+                                            <span
+                                                class="badge badge-outline"
+                                                x-text="experience.date"
+                                            ></span>
+                                            <div
+                                                class="text-lg font-semibold"
+                                                x-text="experience.company"
+                                            ></div>
+                                            <div
+                                                class="italic text-primary"
+                                                x-text="experience.role"
+                                            ></div>
+                                        </div>
+                                    </template>
+                                    <template x-if="i % 2 === 1">
+                                        <div class="timeline-end">
+                                            <span
+                                                class="badge badge-outline"
+                                                x-text="experience.date"
+                                            ></span>
+                                            <div
+                                                class="text-lg font-semibold"
+                                                x-text="experience.company"
+                                            ></div>
+                                            <div
+                                                class="italic text-primary"
+                                                x-text="experience.role"
+                                            ></div>
+                                        </div>
+                                    </template>
+                                    <template x-if="i < experiences.length - 1"
+                                        ><hr
+                                    /></template>
+                                </li>
                             </template>
                         </ul>
                     </div>
-                </template>
-            </section>
-        </div>
-        <footer
-            x-data="{last_updated: dataJson.last_updated}"
-            class="flex justify-between py-2 mt-4 px-4 bg-gray-700">
-            <div class="flex">
-                <a href="https://www.linkedin.com/in/erik-alexander-gonzalez-cardona-b7b03a118" target="_blank">
-                    <svg role="img" class="h-6 w-6 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-                <a href="https://github.com/erikhu" target="_blank" class="ml-2">
-                    <svg role="img" class="h-6 w-6 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                </a>
-                <a href="https://play.google.com/store/apps/developer?id=Policodigo" target="_blank" class="ml-2">
-                    <svg role="img" class="h-6 w-6 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Google Play</title><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg>
-                </a>
+                </section>
+
+                <section aria-labelledby="whatidid-title" class="lg:col-span-2">
+                    <div class="flex items-center justify-between">
+                        <h2 id="whatidid-title" class="text-xl font-semibold">
+                            What I did
+                        </h2>
+                    </div>
+                    <div class="mt-4 space-y-6">
+                        <template
+                            x-for="(experience, i) in experiences"
+                            x-key="experience.date + experience.company + '-details'"
+                        >
+                            <article>
+                                <h3 class="font-semibold">
+                                    <span
+                                        class="badge badge-outline mr-2"
+                                        x-text="experience.date"
+                                    ></span>
+                                    <span x-text="experience.company"></span>
+                                    <span class="opacity-70"> · </span>
+                                    <span
+                                        class="italic text-primary"
+                                        x-text="experience.role"
+                                    ></span>
+                                </h3>
+                                <p
+                                    class="mt-2 text-base-content/80"
+                                    x-text="experience.description"
+                                ></p>
+                                <ul
+                                    class="mt-2 list-disc pl-6 space-y-1 text-base-content/80"
+                                >
+                                    <template
+                                        x-for="(activity, idx) in experience.activities"
+                                        x-key="idx"
+                                    >
+                                        <li x-text="activity"></li>
+                                    </template>
+                                </ul>
+                            </article>
+                        </template>
+                    </div>
+                </section>
+
+                <!-- Side Sections -->
+                <aside aria-label="Side information" class="lg:col-span-1">
+                    <div class="grid grid-cols-1 gap-6">
+                        <template
+                            x-for="section in side_sections"
+                            x-key="section.title"
+                        >
+                            <section
+                                class="card bg-base-100 shadow-sm border border-base-200"
+                            >
+                                <div
+                                    class="card-title px-4 pt-4 text-sm uppercase tracking-wide opacity-80"
+                                >
+                                    <h3 x-text="section.title"></h3>
+                                </div>
+                                <div class="px-4 pb-4">
+                                    <ul
+                                        class="menu bg-base-100 w-full rounded-box"
+                                    >
+                                        <template
+                                            x-for="(item, idx) in section.list"
+                                            x-key="idx"
+                                        >
+                                            <li class="py-1.5 text-sm">
+                                                <span x-text="item"></span>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+                            </section>
+                        </template>
+
+                        <!-- Contact Card -->
+                        <section
+                            class="card bg-base-100 shadow-sm border border-base-200"
+                        >
+                            <div
+                                class="card-title px-4 pt-4 text-sm uppercase tracking-wide opacity-80"
+                            >
+                                Contact
+                            </div>
+                            <div class="px-4 pb-4">
+                                <ul class="menu bg-base-100 w-full rounded-box">
+                                    <li class="py-1.5 text-sm">
+                                        <a
+                                            class="inline-flex items-center gap-2"
+                                            href="mailto:erikhuboy@gmail.com"
+                                        >
+                                            <svg
+                                                class="h-4 w-4"
+                                                fill="currentColor"
+                                                viewBox="0 0 24 24"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    d="M1.5 6.75A2.25 2.25 0 0 1 3.75 4.5h16.5a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 20.25 19.5H3.75A2.25 2.25 0 0 1 1.5 17.25V6.75Zm2.7-.75a.75.75 0 0 0-.45 1.35l7.2 5.4a.75.75 0 0 0 .9 0l7.2-5.4a.75.75 0 0 0-.45-1.35H4.2Z"
+                                                />
+                                            </svg>
+                                            <span class="font-medium"
+                                                >erikhuboy@gmail.com</span
+                                            >
+                                        </a>
+                                    </li>
+                                    <li class="py-1.5 text-sm">
+                                        <a
+                                            href="https://www.linkedin.com/in/erik-alexander-gonzalez-cardona-b7b03a118"
+                                            target="_blank"
+                                            rel="noopener"
+                                            class="inline-flex items-center gap-2"
+                                            aria-label="LinkedIn"
+                                        >
+                                            <svg
+                                                class="h-5 w-5 fill-current"
+                                                role="img"
+                                                viewBox="0 0 24 24"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                                                />
+                                            </svg>
+                                            <span>LinkedIn</span>
+                                        </a>
+                                    </li>
+                                    <li class="py-1.5 text-sm">
+                                        <a
+                                            href="https://github.com/erikhu"
+                                            target="_blank"
+                                            rel="noopener"
+                                            class="inline-flex items-center gap-2"
+                                            aria-label="GitHub"
+                                        >
+                                            <svg
+                                                class="h-5 w-5 fill-current"
+                                                role="img"
+                                                viewBox="0 0 24 24"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                                                />
+                                            </svg>
+                                            <span>GitHub</span>
+                                        </a>
+                                    </li>
+                                    <li class="py-1.5 text-sm">
+                                        <a
+                                            href="https://play.google.com/store/apps/developer?id=Policodigo"
+                                            target="_blank"
+                                            rel="noopener"
+                                            class="inline-flex items-center gap-2"
+                                            aria-label="Google Play"
+                                        >
+                                            <svg
+                                                class="h-5 w-5 fill-current"
+                                                role="img"
+                                                viewBox="0 0 24 24"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"
+                                                />
+                                            </svg>
+                                            <span>Google Play</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </aside>
             </div>
-            <span class="text-white font-semibold">From Anywhere</span>
-            <span class="text-sm text-gray-50" x-text="`Last updated: ${last_updated}`"></span>
+        </main>
+
+        <!-- Footer -->
+        <footer
+            class="mt-10 border-t border-base-200 bg-base-100/60 backdrop-blur print:border-0 print:bg-white"
+        >
+            <div
+                class="max-w-5xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+            >
+                <div class="flex items-center gap-3">
+                    <span class="badge badge-success badge-sm"></span>
+                    <span class="font-medium">From Anywhere</span>
+                </div>
+                <p class="text-sm opacity-70">
+                    Last updated: <span x-text="last_updated"></span>
+                </p>
+            </div>
         </footer>
     </body>
 </html>
