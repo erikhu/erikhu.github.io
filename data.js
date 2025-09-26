@@ -43,7 +43,7 @@ var dataJson = {
       list: ["Object Design", "Algorithms by Robert Sedgewick", "Clean Code"],
     },
   ],
-  bio: "Welcome! Here’s a bit about me. I’m passionate about learning new things in technology and software. I follow news from the open‑source community and the broader tech industry. I’m largely self‑taught and prefer learning from technical books, so I’m usually reading something about software architecture, programming languages, or new proposals in software. My native language is Spanish and I can speak English too. I’m open to learning new human or computer languages as well. I also enjoy being around people, sharing ideas and knowledge, and having good conversations. If you’d like to talk about software, let me know—I’m always up for it.",
+  bio: "I’m a Senior Software Engineer who lives for elegant code, tricky bugs, and that sweet feeling when something just works. My go-to tech is Elixir (because who doesn’t enjoy writing readable, concurrent code?), but I don’t shy away from fullstack challenges. I’ll happily jump into frontend or backend work as needed. I’m always learning and love experimenting with side projects. I believe that the best teams are those where everyone feels safe asking “dumb questions,” where feedback is honest and kind, and where we push each other to do better (not for ego), but for pride in our craft. Mentoring junior devs, reviewing pull requests with a fine-tooth comb, and spotting architecture smells are things I secretly enjoy. Outside of code, I’m probably digging into something new in the open-source world or geeking out over a tool someone just release. Let’s build things that last and have fun doing it.",
   experiences: [
     {
       date: "2014",
