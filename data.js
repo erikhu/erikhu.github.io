@@ -32,18 +32,18 @@ var dataJson = {
     },
     {
       title: "Tools",
-      list: ["Emacs (Evil)", "Docker", "Terminal/Console"],
+      list: ["Emacs (Evil)", "Docker", "Terminal/Console", "Zed"],
     },
     {
       title: "Hobbies",
-      list: ["Hiking", "Reading", "Animal lover", "Anime", "Sports"],
+      list: ["Hiking", "Reading", "Cat/Dog lover <3", "Anime", "Sports"],
     },
     {
       title: "Favorite books",
       list: ["Object Design", "Algorithms by Robert Sedgewick", "Clean Code"],
     },
   ],
-  bio: "Welcome! Here’s a bit about me. I’m passionate about learning new things in technology and software. I follow news from the open‑source community and the broader tech industry. I’m largely self‑taught and prefer learning from technical books, so I’m usually reading something about software architecture, programming languages, or new proposals in software. My native language is Spanish, and I have conversational English. I’m open to learning new human or computer languages as well. I also enjoy being around people, sharing ideas and knowledge, and having good conversations. If you’d like to talk about software, let me know—I’m always up for it.",
+  bio: "Welcome! Here’s a bit about me. I’m passionate about learning new things in technology and software. I follow news from the open‑source community and the broader tech industry. I’m largely self‑taught and prefer learning from technical books, so I’m usually reading something about software architecture, programming languages, or new proposals in software. My native language is Spanish and I can speak English too. I’m open to learning new human or computer languages as well. I also enjoy being around people, sharing ideas and knowledge, and having good conversations. If you’d like to talk about software, let me know—I’m always up for it.",
   experiences: [
     {
       date: "2014",
