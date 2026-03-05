@@ -13,7 +13,7 @@ var dataJson = {
     "Outside of code, I'm probably digging into something new in the open-source world or geeking out over a tool someone just released. Let's build things that last and have fun doing it.",
   ],
   languages: ["Ruby", "PHP", "Elixir", "JavaScript", "TypeScript", "Java"],
-  humanLanguages: ["Spanish (Native)", "English (Intermediate)", "Estonian (A2)"],
+  humanLanguages: ["Spanish", "English", "Estonian (A2)"],
   frameworks: [
     "Laravel",
     "Ruby on Rails",
