@@ -1,49 +1,50 @@
 var dataJson = {
   author: "Erik Gonzalez",
-  currentRole: "Full-Stack Developer",
+  currentRole: "Senior Software Engineer",
+  tagline: "From Anywhere · Open to opportunities",
+  email: "erikhuboy@gmail.com",
+  avatar: "avatar.jpg",
+  pullQuote:
+    "I believe that the best teams are those where everyone feels safe asking 'dumb questions,' where feedback is honest and kind, and where we push each other to do better—not for ego, but for pride in our craft.",
   last_updated: "2025-09-24",
-  side_sections: [
-    {
-      title: "Skills",
-      list: [
-        "Problem solving",
-        "Algorithms",
-        "Software development",
-        "Good communication",
-        "GNU/Linux native",
-        "Intermediate English level",
-        "Native Spanish",
-      ],
-    },
-    {
-      title: "Frameworks",
-      list: [
-        "Laravel",
-        "Ruby on Rails",
-        "Phoenix Framework",
-        "Vue.js",
-        "React Native",
-        "Android",
-      ],
-    },
-    {
-      title: "Languages",
-      list: ["Ruby", "PHP", "Elixir", "JavaScript", "TypeScript", "Java"],
-    },
-    {
-      title: "Tools",
-      list: ["Emacs (Evil)", "Docker", "Terminal/Console", "Zed"],
-    },
-    {
-      title: "Hobbies",
-      list: ["Hiking", "Reading", "Cat/Dog lover <3", "Anime", "Sports"],
-    },
-    {
-      title: "Favorite books",
-      list: ["Object Design", "Algorithms by Robert Sedgewick", "Clean Code"],
-    },
+  bio: [
+    "I'm a Senior Software Engineer who lives for elegant code, tricky bugs, and that sweet feeling when something just works. My go-to tech is Elixir (because who doesn't enjoy writing readable, concurrent code?), but I don't shy away from fullstack challenges. I'll happily jump into frontend or backend work as needed.",
+    "I'm always learning and love experimenting with side projects. Mentoring junior devs, reviewing pull requests with a fine-tooth comb, and spotting architecture smells are things I secretly enjoy.",
+    "Outside of code, I'm probably digging into something new in the open-source world or geeking out over a tool someone just released. Let's build things that last and have fun doing it.",
   ],
-  bio: "I’m a Senior Software Engineer who lives for elegant code, tricky bugs, and that sweet feeling when something just works. My go-to tech is Elixir (because who doesn’t enjoy writing readable, concurrent code?), but I don’t shy away from fullstack challenges. I’ll happily jump into frontend or backend work as needed. I’m always learning and love experimenting with side projects. I believe that the best teams are those where everyone feels safe asking “dumb questions,” where feedback is honest and kind, and where we push each other to do better (not for ego), but for pride in our craft. Mentoring junior devs, reviewing pull requests with a fine-tooth comb, and spotting architecture smells are things I secretly enjoy. Outside of code, I’m probably digging into something new in the open-source world or geeking out over a tool someone just release. Let’s build things that last and have fun doing it.",
+  languages: ["Ruby", "PHP", "Elixir", "JavaScript", "TypeScript", "Java"],
+  humanLanguages: ["Spanish (Native)", "English (Intermediate)", "Estonian (A2)"],
+  frameworks: [
+    "Laravel",
+    "Ruby on Rails",
+    "Phoenix Framework",
+    "Vue.js",
+    "React Native",
+    "Android",
+  ],
+  softSkills: [
+    "Problem solving",
+    "Algorithms",
+    "Software development",
+    "Good communication",
+    "GNU/Linux native",
+  ],
+  tools: ["Emacs (Evil)", "Docker", "Terminal/Console", "Zed"],
+  aiTools: [
+    "Claude Code",
+    "Gemini",
+    "Codex",
+    "Copilot",
+    "OpenSpec",
+    "SpecKit",
+    "GSD",
+  ],
+  hobbies: ["Hiking", "Reading", "Cat/Dog lover <3", "Anime", "Sports"],
+  favoriteBooks: [
+    "Object Design",
+    "Algorithms by Robert Sedgewick",
+    "Clean Code",
+  ],
   experiences: [
     {
       date: "2014",
@@ -52,6 +53,7 @@ var dataJson = {
       description:
         "Provided technical support for company systems at a Colombian firm.",
       activities: [],
+      techStack: [],
     },
     {
       date: "2015",
@@ -59,8 +61,15 @@ var dataJson = {
       role: "Software Developer",
       description:
         "A company I co-founded with a couple of friends. I built WordPress websites, created plugins, and developed mobile apps in Java.",
-      activities: [
-        "Technologies employed: WordPress, PHP, Java, JavaScript, HTML, CSS, Git",
+      activities: [],
+      techStack: [
+        "WordPress",
+        "PHP",
+        "Java",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Git",
       ],
     },
     {
@@ -75,7 +84,21 @@ var dataJson = {
         "I-Lead web app to create e-cards, built in Ruby on Rails and containerized with Docker.",
         "Alentreno platform built in Ruby on Rails and containerized with Docker.",
         "RadiosFlow: more than 30 apps to listen to radio stations by country, built in my free time. I created a command-line tool in Ruby to automate deployment and compilation of all the apps.",
-        "Technologies employed: Ruby on Rails, JavaScript, Ionic, Angular, Docker, Laravel, Java, Kotlin, HTML, CSS, Bootstrap, Material Design, Java, Git",
+      ],
+      techStack: [
+        "Ruby on Rails",
+        "JavaScript",
+        "Ionic",
+        "Angular",
+        "Docker",
+        "Laravel",
+        "Java",
+        "Kotlin",
+        "HTML",
+        "CSS",
+        "Bootstrap",
+        "Material Design",
+        "Git",
       ],
     },
     {
@@ -85,8 +108,23 @@ var dataJson = {
       description:
         "As a Full-Stack developer, I created several in-house projects, improved code quality, and added new features. These projects were built to meet company standards using unit and integration tests.",
       activities: [
-        "I am responsible for maintaining the API used by in-house projects and partner companies. I continuously contribute to the CRM, the company’s main project. I built the mobile app that helps drivers with deliveries and an in-house telephony panel using modern technologies for real-time and concurrent processes.",
-        "Technologies employed: PHP, JavaScript, TypeScript, Elixir, Docker, Phoenix Framework, Laravel, WebSockets, React Native, Vue.js, Tailwind CSS, HTML, CSS, Git",
+        "I am responsible for maintaining the API used by in-house projects and partner companies. I continuously contribute to the CRM, the company's main project. I built the mobile app that helps drivers with deliveries and an in-house telephony panel using modern technologies for real-time and concurrent processes.",
+      ],
+      techStack: [
+        "PHP",
+        "JavaScript",
+        "TypeScript",
+        "Elixir",
+        "Docker",
+        "Phoenix Framework",
+        "Laravel",
+        "WebSockets",
+        "React Native",
+        "Vue.js",
+        "Tailwind CSS",
+        "HTML",
+        "CSS",
+        "Git",
       ],
     },
     {
@@ -95,18 +133,57 @@ var dataJson = {
       role: "Elixir Backend",
       description:
         "I'm part of the core team with a broad view of the business and related projects. My main focus has been contributing to and keeping our core project stable—a game aggregator that handles millions of transactions per month. I've also contributed to our back-office projects, integrating technologies like GraphQL, RabbitMQ, and Keycloak, and extending the domain logic. As part of the core team, I also support our Tech Ops team during critical situations. Furthermore, I've contributed to the design of new highly scalable projects.",
-      activities: [
-        "Technologies employed: Elixir, RabbitMQ, Docker, Phoenix Framework, Keycloak, PostgreSQL, GraphQL, Git, Kibana",
+      activities: [],
+      techStack: [
+        "Elixir",
+        "RabbitMQ",
+        "Docker",
+        "Phoenix Framework",
+        "Keycloak",
+        "PostgreSQL",
+        "GraphQL",
+        "Git",
+        "Kibana",
       ],
     },
     {
-      date: "2024 - present",
+      date: "2024 - Oct 2024",
       company: "Yolo Group - Partners.io",
       role: "Senior Software Engineer",
       description:
         "As part of the Partners.io team, I'm responsible for planning and delivering projects, and I handle management tasks such as onboarding another senior engineer to the projects we are assigned. I also help maintain a platform that handles a high volume of transactions from different brands, ensuring seamless integration and efficient processing. Additionally, I safeguard the codebase by enforcing best practices and agreed coding standards. I took ownership of a legacy project with no dedicated team that was still in production and modernized it to reactivate it for development purposes. My role on the team is primarily full‑stack, contributing to every part of the project—from backend to frontend—to ensure a seamless user experience. I also have the opportunity to mentor junior engineers and provide guidance on best practices and coding standards.",
-      activities: [
-        "Technologies employed: Elixir, Docker, Phoenix Framework, Clickhouse, PostgreSQL, Git, Clickhouse",
+      activities: [],
+      techStack: [
+        "Elixir",
+        "Docker",
+        "Phoenix Framework",
+        "Clickhouse",
+        "PostgreSQL",
+        "Git",
+      ],
+    },
+    {
+      date: "Oct 2024 - present",
+      company: "Bombay Group",
+      role: "Senior Software Engineer",
+      description:
+        "Developed and maintained two Elixir/Phoenix applications as part of the core engineering team. Built GraphQL APIs using Absinthe, implementing JWT authentication (ES256), API key management with SHA-256 hashing, real-time subscriptions, audit logging, and tier-based access control. Migrated third-party integrations including Google reCAPTCHA Enterprise and payment providers. Designed database schemas, migrations, and domain logic following DDD patterns. On the admin dashboard side, built interactive features with Phoenix LiveView and Surface components, including real-time forms with file uploads, dynamic filtering, and compliance enforcement across nested views. Led framework upgrades (Phoenix 1.8, LiveView 1.1.17, EEx to HEEx migration) and maintained CI/CD pipelines on CircleCI with Dialyzer static analysis and Credo for code quality. Integrated external services such as ExAws/S3 and Slack, and configured iOS universal links. Contributed over 600 commits across both projects in a five-month period.",
+      activities: [],
+      techStack: [
+        "Elixir",
+        "Phoenix Framework",
+        "Phoenix LiveView",
+        "Surface",
+        "Absinthe (GraphQL)",
+        "PostgreSQL",
+        "JWT (ES256)",
+        "ExAws/S3",
+        "CircleCI",
+        "Dialyzer",
+        "Credo",
+        "Docker",
+        "Slack API",
+        "Git",
       ],
     },
   ],
