@@ -147,7 +147,7 @@ var dataJson = {
       ],
     },
     {
-      date: "2024 - Oct 2024",
+      date: "2024 - Oct 2025",
       company: "Yolo Group - Partners.io",
       role: "Senior Software Engineer",
       description:
@@ -163,7 +163,7 @@ var dataJson = {
       ],
     },
     {
-      date: "Oct 2024 - present",
+      date: "Oct 2025 - present",
       company: "Bombay Group",
       role: "Senior Software Engineer",
       description:
