@@ -2,7 +2,7 @@ var dataJson = {
   author: "Erik Gonzalez",
   currentRole: "Senior Software Engineer",
   tagline: "From Anywhere · Open to opportunities",
-  email: "erikhuboy@gmail.com",
+  email: "erik@erikhu.com",
   avatar: "avatar.jpg",
   pullQuote:
     "I believe that the best teams are those where everyone feels safe asking 'dumb questions,' where feedback is honest and kind, and where we push each other to do better—not for ego, but for pride in our craft.",
