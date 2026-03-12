@@ -39,6 +39,18 @@ var dataJson = {
     "SpecKit",
     "GSD",
   ],
+  openSourceProjects: [
+    {
+      name: "Shogun",
+      description:
+        "An Elixir WebSocket client built on top of Gun. Provides a clean API for real-time communication with TLS certificate validation.",
+      url: "https://hex.pm/packages/shogun",
+      repo: "https://github.com/erikhu/shogun",
+      techStack: ["Elixir", "WebSockets", "Gun", "TLS"],
+      stats: "1,300+ downloads on Hex.pm",
+      license: "GPLv3",
+    },
+  ],
   hobbies: ["Hiking", "Reading", "Cat/Dog lover <3", "Anime", "Sports"],
   favoriteBooks: [
     "Object Design",

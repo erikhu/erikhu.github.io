@@ -435,6 +435,79 @@
                 </div>
             </section>
 
+            <!-- Open Source Projects -->
+            <section aria-labelledby="oss-title" class="print-break-avoid">
+                <h2
+                    id="oss-title"
+                    class="text-lg font-semibold uppercase tracking-wide opacity-70"
+                >
+                    Open Source
+                </h2>
+
+                <div class="mt-4 space-y-4">
+                    <template
+                        x-for="project in openSourceProjects"
+                        :key="project.name"
+                    >
+                        <div
+                            class="card bg-base-100 shadow-sm border border-base-200"
+                        >
+                            <div class="card-body p-4 sm:p-5">
+                                <div
+                                    class="flex flex-wrap items-center gap-2 mb-1"
+                                >
+                                    <span
+                                        class="font-semibold text-base"
+                                        x-text="project.name"
+                                    ></span>
+                                    <a
+                                        :href="project.url"
+                                        target="_blank"
+                                        rel="noopener"
+                                        class="badge badge-primary badge-outline badge-sm no-print"
+                                    >
+                                        Hex.pm
+                                    </a>
+                                    <a
+                                        :href="project.repo"
+                                        target="_blank"
+                                        rel="noopener"
+                                        class="badge badge-outline badge-sm no-print"
+                                    >
+                                        GitHub
+                                    </a>
+                                    <span
+                                        class="text-xs opacity-50"
+                                        x-text="project.stats"
+                                    ></span>
+                                </div>
+
+                                <p
+                                    class="text-sm text-base-content/80"
+                                    x-text="project.description"
+                                ></p>
+
+                                <div class="mt-2 flex flex-wrap gap-1">
+                                    <template
+                                        x-for="tech in project.techStack"
+                                        :key="tech"
+                                    >
+                                        <span
+                                            class="badge badge-xs badge-ghost"
+                                            x-text="tech"
+                                        ></span>
+                                    </template>
+                                    <span
+                                        class="badge badge-xs badge-outline"
+                                        x-text="project.license"
+                                    ></span>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </section>
+
             <!-- Tools & Environment -->
             <section aria-labelledby="tools-title" class="print-break-avoid">
                 <h2
