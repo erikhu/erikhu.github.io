@@ -6,7 +6,7 @@ var dataJson = {
   avatar: "avatar.jpg",
   pullQuote:
     "I believe that the best teams are those where everyone feels safe asking 'dumb questions,' where feedback is honest and kind, and where we push each other to do better—not for ego, but for pride in our craft.",
-  last_updated: "2025-09-24",
+  last_updated: "2026-08-18",
   bio: [
     "I'm a Senior Software Engineer who lives for elegant code, tricky bugs, and that sweet feeling when something just works. My go-to tech is Elixir (because who doesn't enjoy writing readable, concurrent code?), but I don't shy away from fullstack challenges. I'll happily jump into frontend or backend work as needed.",
     "I'm always learning and love experimenting with side projects. Mentoring junior devs, reviewing pull requests with a fine-tooth comb, and spotting architecture smells are things I secretly enjoy.",
@@ -29,7 +29,15 @@ var dataJson = {
     "Good communication",
     "GNU/Linux native",
   ],
-  tools: ["Emacs (Evil)", "Docker", "Terminal/Console", "Zed"],
+  tools: [
+    "Emacs (Evil)",
+    "Docker",
+    "Terminal/Console",
+    "Zed",
+    "Codex",
+    "Claude",
+    "Hermes",
+  ],
   aiTools: [
     "Claude Code",
     "Gemini",
@@ -175,7 +183,7 @@ var dataJson = {
       ],
     },
     {
-      date: "Oct 2025 - present",
+      date: "Oct 2025 - Mar 2026",
       company: "Bombay Group",
       role: "Senior Software Engineer",
       description:
@@ -196,6 +204,25 @@ var dataJson = {
         "Docker",
         "Slack API",
         "Git",
+      ],
+    },
+    {
+      date: "Apr 2026 - present",
+      company: "IOENT",
+      role: "Senior Software Engineer",
+      description:
+        "Led the development of a production-grade enterprise AI assistant platform using Python, Elixir/Phoenix, Agno AgentOS, Claude, AWS Bedrock, and Model Context Protocol (MCP), providing natural-language access to authorized tools and data through chat, web, and CLI interfaces. Implemented persistent conversations, real-time response streaming, secure file processing, document generation, access controls, resilient service integrations, observability, comprehensive automated testing, and Docker-based CI/CD while maintaining clear security and privacy boundaries.",
+      activities: [],
+      techStack: [
+        "Python",
+        "Elixir",
+        "Phoenix Framework",
+        "Agno AgentOS",
+        "Claude",
+        "AWS Bedrock",
+        "MCP",
+        "Docker",
+        "CI/CD",
       ],
     },
   ],
