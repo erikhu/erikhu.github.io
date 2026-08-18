@@ -2,63 +2,380 @@
 <html lang="en" class="scroll-smooth" data-theme="light">
     <head>
         <meta charset="utf-8" />
-        <title>Erik Gonzalez — Resume</title>
+        <title>Erik Gonzalez — Senior Software Engineer</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="color-scheme" content="light dark" />
         <meta
             name="description"
-            content="Professional resume for Erik Gonzalez — Senior Software Engineer. Experience, skills, and contact information."
+            content="Erik Gonzalez is a Senior Software Engineer building enterprise AI platforms and distributed systems with Elixir and Python."
         />
         <link
             rel="icon"
-            href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">💼</text></svg>'
+            href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">◆</text></svg>'
         />
 
-        <!-- DaisyUI + Tailwind v4 CDN -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/daisyui@5"
-            rel="stylesheet"
-            type="text/css"
-        />
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-        <link
-            href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
-            rel="stylesheet"
-            type="text/css"
-        />
-
-        <!-- Apply saved/system theme early to avoid flash -->
         <script>
             (function () {
                 try {
-                    var key = "theme";
-                    var saved = localStorage.getItem(key);
-                    var prefersDark =
-                        window.matchMedia &&
-                        window.matchMedia("(prefers-color-scheme: dark)")
-                            .matches;
-                    var applied = saved || (prefersDark ? "dark" : "light");
+                    var saved = localStorage.getItem("theme");
+                    var prefersDark = window.matchMedia(
+                        "(prefers-color-scheme: dark)",
+                    ).matches;
                     document.documentElement.setAttribute(
                         "data-theme",
-                        applied,
+                        saved || (prefersDark ? "dark" : "light"),
                     );
                 } catch (_) {}
             })();
         </script>
 
         <style>
+            :root {
+                --canvas: #f5f4ef;
+                --surface: rgba(255, 255, 255, 0.78);
+                --surface-solid: #fffefa;
+                --ink: #18181b;
+                --muted: #66666f;
+                --line: rgba(24, 24, 27, 0.12);
+                --accent: #5b4de3;
+                --accent-strong: #4437bd;
+                --accent-soft: rgba(91, 77, 227, 0.1);
+                --teal: #0f8b80;
+                --shadow: 0 24px 70px rgba(31, 30, 43, 0.08);
+            }
+
+            [data-theme="dark"] {
+                --canvas: #101014;
+                --surface: rgba(28, 28, 34, 0.8);
+                --surface-solid: #1b1b21;
+                --ink: #f2f1ed;
+                --muted: #aaa8b2;
+                --line: rgba(255, 255, 255, 0.12);
+                --accent: #9a8cff;
+                --accent-strong: #b4aaff;
+                --accent-soft: rgba(154, 140, 255, 0.12);
+                --teal: #54c8bd;
+                --shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
             [x-cloak] {
                 display: none !important;
             }
+
+            body {
+                margin: 0;
+                color: var(--ink);
+                background:
+                    radial-gradient(
+                        circle at 10% 0%,
+                        var(--accent-soft),
+                        transparent 27rem
+                    ),
+                    var(--canvas);
+                font-family:
+                    Inter, ui-sans-serif, system-ui, -apple-system,
+                    BlinkMacSystemFont, "Segoe UI", sans-serif;
+                transition:
+                    color 180ms ease,
+                    background-color 180ms ease;
+            }
+
+            body::before {
+                position: fixed;
+                inset: 0;
+                z-index: -1;
+                content: "";
+                opacity: 0.3;
+                background-image:
+                    linear-gradient(var(--line) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+                background-size: 48px 48px;
+                mask-image: linear-gradient(to bottom, black, transparent 45rem);
+            }
+
+            a,
+            button {
+                transition:
+                    color 150ms ease,
+                    border-color 150ms ease,
+                    background-color 150ms ease,
+                    transform 150ms ease;
+            }
+
+            a:focus-visible,
+            button:focus-visible {
+                outline: 3px solid var(--accent);
+                outline-offset: 3px;
+            }
+
+            .skip-link {
+                position: fixed;
+                top: 1rem;
+                left: 1rem;
+                z-index: 50;
+                padding: 0.7rem 1rem;
+                color: white;
+                background: var(--accent-strong);
+                border-radius: 999px;
+                transform: translateY(-200%);
+            }
+
+            .skip-link:focus {
+                transform: translateY(0);
+            }
+
+            .glass {
+                background: var(--surface);
+                border: 1px solid var(--line);
+                box-shadow: var(--shadow);
+                backdrop-filter: blur(18px);
+            }
+
+            .eyebrow {
+                color: var(--accent-strong);
+                font-size: 0.72rem;
+                font-weight: 800;
+                letter-spacing: 0.18em;
+                text-transform: uppercase;
+            }
+
+            .muted {
+                color: var(--muted);
+            }
+
+            .chip {
+                display: inline-flex;
+                align-items: center;
+                min-height: 1.75rem;
+                padding: 0.3rem 0.65rem;
+                color: var(--muted);
+                background: var(--surface-solid);
+                border: 1px solid var(--line);
+                border-radius: 999px;
+                font-size: 0.75rem;
+                font-weight: 650;
+            }
+
+            .action-primary,
+            .action-secondary {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                min-height: 2.75rem;
+                padding: 0.65rem 1rem;
+                border: 1px solid var(--line);
+                border-radius: 999px;
+                font-size: 0.85rem;
+                font-weight: 750;
+                text-decoration: none;
+            }
+
+            .action-primary {
+                color: white;
+                background: var(--accent-strong);
+                border-color: transparent;
+            }
+
+            .action-primary:hover,
+            .action-secondary:hover {
+                transform: translateY(-2px);
+            }
+
+            .action-secondary {
+                color: var(--ink);
+                background: var(--surface);
+            }
+
+            .impact-card {
+                position: relative;
+                overflow: hidden;
+                min-height: 9.5rem;
+                padding: 1.3rem;
+                background: var(--surface);
+                border: 1px solid var(--line);
+                border-radius: 1.25rem;
+            }
+
+            .impact-card::after {
+                position: absolute;
+                right: -2rem;
+                bottom: -3rem;
+                width: 7rem;
+                height: 7rem;
+                content: "";
+                background: var(--accent-soft);
+                border-radius: 50%;
+            }
+
+            .experience-card {
+                position: relative;
+                padding: 1.5rem;
+                background: var(--surface);
+                border: 1px solid var(--line);
+                border-radius: 1.25rem;
+            }
+
+            .experience-card.current {
+                background:
+                    linear-gradient(135deg, var(--accent-soft), transparent 55%),
+                    var(--surface);
+                border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+            }
+
+            .experience-card.current::before {
+                position: absolute;
+                top: 1.5rem;
+                left: -0.47rem;
+                width: 0.85rem;
+                height: 0.85rem;
+                content: "";
+                background: var(--accent);
+                border: 3px solid var(--canvas);
+                border-radius: 50%;
+            }
+
+            .achievement-list li::marker {
+                color: var(--teal);
+            }
+
+            .sidebar-section + .sidebar-section {
+                padding-top: 1.5rem;
+                margin-top: 1.5rem;
+                border-top: 1px solid var(--line);
+            }
+
+            @media (min-width: 1024px) {
+                .sticky-sidebar {
+                    position: sticky;
+                    top: 2rem;
+                }
+            }
+
             @media print {
+                :root {
+                    --canvas: white;
+                    --surface: white;
+                    --surface-solid: white;
+                    --ink: black;
+                    --muted: #444;
+                    --line: #d6d6d6;
+                    --accent: #3d348b;
+                    --accent-strong: #3d348b;
+                    --accent-soft: transparent;
+                    --shadow: none;
+                }
+
+                @page {
+                    margin: 12mm;
+                }
+
+                body {
+                    background: white;
+                    font-size: 10.5px;
+                }
+
+                body::before,
                 .no-print {
                     display: none !important;
                 }
+
+                .skip-link,
+                .portrait-card,
+                .beyond-code {
+                    display: none !important;
+                }
+
+                main {
+                    max-width: none !important;
+                    padding: 0 !important;
+                }
+
+                .hero-section {
+                    display: block !important;
+                    padding: 0 0 0.8rem !important;
+                }
+
+                .hero-section h1 {
+                    max-width: none !important;
+                    margin-top: 0.35rem !important;
+                    font-size: 2.1rem !important;
+                    line-height: 1 !important;
+                }
+
+                .hero-section p {
+                    margin-top: 0.45rem !important;
+                }
+
+                .hero-section .chip {
+                    min-height: 0;
+                    padding: 0.15rem 0.45rem;
+                }
+
+                .impact-section {
+                    display: none !important;
+                }
+
+                .glass,
+                .impact-card,
+                .experience-card {
+                    box-shadow: none;
+                    backdrop-filter: none;
+                }
+
+                .print-layout {
+                    display: grid !important;
+                    grid-template-columns: 27% 1fr !important;
+                    gap: 0.7rem !important;
+                    margin-top: 0.8rem !important;
+                }
+
                 .print-break-avoid {
                     break-inside: avoid;
                 }
-                body {
-                    font-size: 12px;
+
+                .experience-card {
+                    padding: 0.65rem;
+                }
+
+                .impact-card {
+                    min-height: 0;
+                    padding: 0.55rem;
+                }
+
+                .impact-card p:first-child {
+                    font-size: 1.15rem !important;
+                }
+
+                .sticky-sidebar {
+                    padding: 0.7rem !important;
+                }
+
+                .sidebar-section + .sidebar-section {
+                    padding-top: 0.65rem;
+                    margin-top: 0.65rem;
+                }
+
+                .sidebar-section:last-child,
+                .experience-card > .mt-5 {
+                    display: none !important;
+                }
+
+                #experience .space-y-5 > :not([hidden]) ~ :not([hidden]) {
+                    margin-top: 0.5rem;
+                }
+
+                .achievement-list {
+                    margin-top: 0.35rem !important;
+                    line-height: 1.35 !important;
+                }
+
+                footer {
+                    padding: 0.7rem 0 0 !important;
                 }
             }
         </style>
@@ -70,139 +387,38 @@
         ></script>
     </head>
 
-    <body
-        x-data="dataJson"
-        x-cloak
-        class="antialiased bg-base-100 text-base-content"
-    >
+    <body x-data="dataJson" x-cloak>
+        <a href="#main-content" class="skip-link">Skip to content</a>
+
         <noscript>
-            <div class="alert alert-warning rounded-none">
-                This page uses JavaScript to render resume content. Please
-                enable JavaScript.
+            <div style="padding: 1rem; text-align: center">
+                This résumé requires JavaScript to display its content.
             </div>
         </noscript>
 
-        <!-- Header / Hero -->
-        <header class="bg-base-200 print:bg-base-100">
-            <div class="max-w-3xl mx-auto px-4 py-8 sm:py-10">
-                <div class="flex items-center gap-5">
-                    <!-- Avatar -->
-                    <div class="avatar" :class="{ 'placeholder': !avatar }">
-                        <div
-                            class="w-16 h-16 rounded-full"
-                            :class="avatar ? '' : 'bg-primary text-primary-content'"
-                        >
-                            <template x-if="avatar">
-                                <img
-                                    :src="avatar"
-                                    alt="Erik Gonzalez"
-                                    class="rounded-full"
-                                />
-                            </template>
-                            <template x-if="!avatar">
-                                <span class="text-2xl font-bold">EG</span>
-                            </template>
-                        </div>
-                    </div>
-                    <div>
-                        <h1
-                            class="text-3xl sm:text-4xl font-extrabold tracking-tight"
-                            x-text="author"
-                        ></h1>
-                        <p
-                            class="mt-0.5 text-base sm:text-lg opacity-90"
-                            x-text="currentRole"
-                        ></p>
-                        <p
-                            class="mt-0.5 text-sm opacity-70"
-                            x-text="tagline"
-                        ></p>
-                    </div>
-                </div>
-
-                <!-- Action row -->
-                <div class="mt-5 flex flex-wrap items-center gap-2 no-print">
-                    <a
-                        class="btn btn-sm btn-primary"
-                        href="mailto:erik@erikhu.com"
-                        aria-label="Email Erik"
+        <header class="px-4 pt-5 sm:px-6 sm:pt-8 no-print">
+            <nav
+                class="mx-auto flex max-w-6xl items-center justify-between"
+                aria-label="Primary navigation"
+            >
+                <a href="#" class="flex items-center gap-3 font-bold">
+                    <span
+                        class="grid h-9 w-9 place-items-center rounded-xl text-sm text-white"
+                        style="background: var(--accent-strong)"
+                        aria-hidden="true"
+                        >EG</span
                     >
-                        <svg
-                            class="h-4 w-4"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                        >
-                            <path
-                                d="M1.5 6.75A2.25 2.25 0 0 1 3.75 4.5h16.5a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 20.25 19.5H3.75A2.25 2.25 0 0 1 1.5 17.25V6.75Zm2.7-.75a.75.75 0 0 0-.45 1.35l7.2 5.4a.75.75 0 0 0 .9 0l7.2-5.4a.75.75 0 0 0-.45-1.35H4.2Z"
-                            />
-                        </svg>
-                        Email
-                    </a>
-
-                    <a
-                        href="https://www.linkedin.com/in/erik-alexander-gonzalez-cardona-b7b03a118"
-                        target="_blank"
-                        rel="noopener"
-                        class="btn btn-sm btn-ghost btn-square"
-                        aria-label="LinkedIn"
+                    <span x-text="author"></span>
+                </a>
+                <div class="flex items-center gap-2">
+                    <a href="#experience" class="action-secondary hidden sm:inline-flex"
+                        >Experience</a
                     >
-                        <svg
-                            class="h-5 w-5 fill-current"
-                            role="img"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                        >
-                            <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                            />
-                        </svg>
-                    </a>
-                    <a
-                        href="https://github.com/erikhu"
-                        target="_blank"
-                        rel="noopener"
-                        class="btn btn-sm btn-ghost btn-square"
-                        aria-label="GitHub"
-                    >
-                        <svg
-                            class="h-5 w-5 fill-current"
-                            role="img"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                        >
-                            <path
-                                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                            />
-                        </svg>
-                    </a>
-                    <a
-                        href="https://play.google.com/store/apps/developer?id=Policodigo"
-                        target="_blank"
-                        rel="noopener"
-                        class="btn btn-sm btn-ghost btn-square"
-                        aria-label="Google Play"
-                    >
-                        <svg
-                            class="h-5 w-5 fill-current"
-                            role="img"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                        >
-                            <path
-                                d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"
-                            />
-                        </svg>
-                    </a>
-
-                    <div class="flex-1"></div>
-
-                    <!-- Theme toggle -->
                     <button
                         type="button"
-                        class="btn btn-sm btn-ghost"
-                        aria-label="Toggle theme"
-                        title="Toggle light/dark mode"
+                        class="action-secondary"
+                        aria-label="Toggle light and dark theme"
+                        title="Toggle light and dark theme"
                         onclick="
                             (function () {
                                 var el = document.documentElement;
@@ -220,455 +436,348 @@
                         <svg
                             class="h-4 w-4"
                             viewBox="0 0 24 24"
-                            fill="currentColor"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
                             aria-hidden="true"
                         >
                             <path
-                                d="M21.752 15.002A9.718 9.718 0 0 1 12 21.75c-5.385 0-9.75-4.365-9.75-9.75 0-4.214 2.685-7.802 6.45-9.173a.75.75 0 0 1 .967.967A8.25 8.25 0 1 0 21.75 14.25a.75.75 0 0 1 .002.752Z"
+                                d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"
                             />
                         </svg>
                         <span class="hidden sm:inline">Theme</span>
                     </button>
-
-                    <!-- Print -->
-                    <button
-                        type="button"
-                        class="btn btn-sm btn-ghost"
-                        onclick="window.print()"
-                        aria-label="Print this resume"
-                    >
-                        <svg
-                            class="h-4 w-4"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            aria-hidden="true"
-                        >
-                            <path
-                                d="M6 2a2 2 0 0 0-2 2v2h16V4a2 2 0 0 0-2-2H6Zm14 7H4a2 2 0 0 0-2 2v5h4v4h12v-4h4v-5a2 2 0 0 0-2-2ZM8 20v-5h8v5H8Z"
-                            />
-                        </svg>
-                        <span class="hidden sm:inline">Print</span>
-                    </button>
                 </div>
-            </div>
+            </nav>
         </header>
 
-        <!-- Main Content -->
-        <main
-            class="max-w-3xl mx-auto px-4 py-8 sm:py-10 print:py-4 space-y-10"
-        >
-            <!-- About -->
-            <section aria-labelledby="about-title">
-                <h2
-                    id="about-title"
-                    class="text-lg font-semibold uppercase tracking-wide opacity-70"
-                >
-                    About
-                </h2>
+        <main id="main-content" class="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
+            <section class="hero-section grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-[1fr_22rem]">
+                <div>
+                    <p class="eyebrow">Senior software engineer</p>
+                    <h1
+                        class="mt-4 max-w-3xl text-4xl font-black leading-tight tracking-[-0.035em] sm:text-6xl"
+                        x-text="headline"
+                    ></h1>
+                    <p
+                        class="muted mt-4 max-w-2xl text-base leading-7 sm:text-lg"
+                        x-text="summary"
+                    ></p>
 
-                <!-- Pull quote -->
-                <blockquote
-                    class="mt-4 border-l-4 border-primary pl-4 italic opacity-85 text-sm sm:text-base"
-                    x-text="pullQuote"
-                ></blockquote>
-
-                <div class="mt-4 space-y-3 leading-7">
-                    <template x-for="(paragraph, i) in bio" :key="i">
-                        <p x-text="paragraph"></p>
-                    </template>
-                </div>
-            </section>
-
-            <!-- Skills -->
-            <section aria-labelledby="skills-title" class="print-break-avoid">
-                <h2
-                    id="skills-title"
-                    class="text-lg font-semibold uppercase tracking-wide opacity-70"
-                >
-                    Skills
-                </h2>
-
-                <div class="mt-4 space-y-4">
-                    <!-- Languages -->
-                    <div>
-                        <h3 class="text-sm font-medium opacity-60 mb-2">
-                            Languages
-                        </h3>
-                        <div class="flex flex-wrap gap-2">
-                            <template x-for="lang in languages" :key="lang">
-                                <span
-                                    class="badge badge-primary badge-outline"
-                                    x-text="lang"
-                                ></span>
-                            </template>
-                        </div>
+                    <div class="mt-6 flex flex-wrap gap-2" aria-label="Focus areas">
+                        <template x-for="area in focusAreas" :key="area">
+                            <span class="chip" x-text="area"></span>
+                        </template>
                     </div>
 
-                    <!-- Frameworks -->
-                    <div>
-                        <h3 class="text-sm font-medium opacity-60 mb-2">
-                            Frameworks
-                        </h3>
-                        <div class="flex flex-wrap gap-2">
-                            <template x-for="fw in frameworks" :key="fw">
-                                <span
-                                    class="badge badge-secondary badge-outline"
-                                    x-text="fw"
-                                ></span>
-                            </template>
-                        </div>
-                    </div>
-
-                    <!-- Professional Skills -->
-                    <div>
-                        <h3 class="text-sm font-medium opacity-60 mb-2">
-                            Professional
-                        </h3>
-                        <div class="flex flex-wrap gap-2">
-                            <template x-for="skill in softSkills" :key="skill">
-                                <span
-                                    class="badge badge-ghost"
-                                    x-text="skill"
-                                ></span>
-                            </template>
-                        </div>
-                    </div>
-
-                    <!-- AI Tools -->
-                    <div>
-                        <h3 class="text-sm font-medium opacity-60 mb-2">
-                            AI Tools
-                        </h3>
-                        <div class="flex flex-wrap gap-2">
-                            <template x-for="ai in aiTools" :key="ai">
-                                <span
-                                    class="badge badge-accent badge-outline"
-                                    x-text="ai"
-                                ></span>
-                            </template>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Experience (vertical timeline) -->
-            <section aria-labelledby="experience-title">
-                <h2
-                    id="experience-title"
-                    class="text-lg font-semibold uppercase tracking-wide opacity-70"
-                >
-                    Experience
-                </h2>
-
-                <div
-                    class="mt-4 relative border-l-2 border-base-300 ml-3 pl-6 space-y-6"
-                >
-                    <template
-                        x-for="(exp, i) in experiences"
-                        :key="exp.date + exp.company"
-                    >
-                        <div class="relative print-break-avoid">
-                            <!-- Timeline dot -->
-                            <div
-                                class="absolute -left-[33px] top-1 w-4 h-4 rounded-full bg-primary border-2 border-base-100"
-                            ></div>
-
-                            <div
-                                class="card bg-base-100 shadow-sm border border-base-200"
+                    <div class="mt-8 flex flex-wrap gap-3 no-print">
+                        <a class="action-primary" :href="'mailto:' + email">
+                            <svg
+                                class="h-4 w-4"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                aria-hidden="true"
                             >
-                                <div class="card-body p-4 sm:p-5">
+                                <path d="M3 5h18v14H3z" />
+                                <path d="m3 6 9 7 9-7" />
+                            </svg>
+                            Let’s talk
+                        </a>
+                        <a
+                            class="action-secondary"
+                            href="https://github.com/erikhu"
+                            target="_blank"
+                            rel="noopener"
+                            >GitHub ↗</a
+                        >
+                        <a
+                            class="action-secondary"
+                            href="https://www.linkedin.com/in/erik-alexander-gonzalez-cardona-b7b03a118"
+                            target="_blank"
+                            rel="noopener"
+                            >LinkedIn ↗</a
+                        >
+                        <button class="action-secondary" onclick="window.print()">
+                            Print résumé
+                        </button>
+                    </div>
+                </div>
+
+                <div class="portrait-card relative mx-auto w-full max-w-xs lg:max-w-none">
+                    <div
+                        class="absolute -inset-3 rotate-3 rounded-[2rem]"
+                        style="background: var(--accent-soft)"
+                        aria-hidden="true"
+                    ></div>
+                    <div class="glass relative rounded-[1.7rem] p-4">
+                        <img
+                            :src="avatar"
+                            alt="Portrait of Erik Gonzalez"
+                            class="aspect-square w-full rounded-[1.25rem] object-cover"
+                        />
+                        <div class="flex items-center justify-between gap-4 px-2 pb-1 pt-4">
+                            <div>
+                                <p class="font-extrabold" x-text="author"></p>
+                                <p class="muted text-sm" x-text="tagline"></p>
+                            </div>
+                            <span
+                                class="h-3 w-3 shrink-0 rounded-full"
+                                style="background: var(--teal)"
+                                title="Open to opportunities"
+                                aria-label="Open to opportunities"
+                            ></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                class="impact-section grid gap-4 sm:grid-cols-3"
+                aria-labelledby="impact-title"
+            >
+                <h2 id="impact-title" class="sr-only">Selected impact</h2>
+                <template x-for="item in impactHighlights" :key="item.label">
+                    <article class="impact-card print-break-avoid">
+                        <p
+                            class="relative z-10 text-3xl font-black tracking-tight"
+                            style="color: var(--accent-strong)"
+                            x-text="item.value"
+                        ></p>
+                        <p
+                            class="muted relative z-10 mt-3 max-w-xs text-sm font-medium leading-6"
+                            x-text="item.label"
+                        ></p>
+                    </article>
+                </template>
+            </section>
+
+            <div class="print-layout mt-14 grid gap-10 lg:grid-cols-[18rem_1fr] lg:gap-14">
+                <aside aria-label="Profile details">
+                    <div class="glass sticky-sidebar rounded-3xl p-6">
+                        <section class="sidebar-section">
+                            <p class="eyebrow">Core expertise</p>
+                            <div class="mt-5 space-y-5">
+                                <template
+                                    x-for="group in capabilityGroups"
+                                    :key="group.name"
+                                >
+                                    <div>
+                                        <h3
+                                            class="text-sm font-extrabold"
+                                            x-text="group.name"
+                                        ></h3>
+                                        <div class="mt-2 flex flex-wrap gap-1.5">
+                                            <template
+                                                x-for="item in group.items"
+                                                :key="item"
+                                            >
+                                                <span class="chip" x-text="item"></span>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </section>
+
+                        <section class="sidebar-section">
+                            <p class="eyebrow">Tools & environment</p>
+                            <div class="mt-4 flex flex-wrap gap-1.5">
+                                <template x-for="tool in tools" :key="tool">
+                                    <span class="chip" x-text="tool"></span>
+                                </template>
+                            </div>
+                        </section>
+
+                        <section class="sidebar-section">
+                            <p class="eyebrow">Languages</p>
+                            <ul class="muted mt-4 space-y-2 text-sm">
+                                <template x-for="language in humanLanguages" :key="language">
+                                    <li x-text="language"></li>
+                                </template>
+                            </ul>
+                        </section>
+
+                        <section class="sidebar-section">
+                            <p class="eyebrow">Working principles</p>
+                            <blockquote
+                                class="muted mt-4 text-sm italic leading-6"
+                                x-text="pullQuote"
+                            ></blockquote>
+                        </section>
+                    </div>
+                </aside>
+
+                <div>
+                    <section id="experience" aria-labelledby="experience-title">
+                        <div class="flex items-end justify-between gap-6">
+                            <div>
+                                <p class="eyebrow">Career</p>
+                                <h2
+                                    id="experience-title"
+                                    class="mt-2 text-3xl font-black tracking-tight sm:text-4xl"
+                                >
+                                    Experience
+                                </h2>
+                            </div>
+                            <p class="muted hidden max-w-xs text-right text-sm sm:block">
+                                From hands-on delivery to platform ownership and technical leadership.
+                            </p>
+                        </div>
+
+                        <div class="mt-7 space-y-5">
+                            <template
+                                x-for="exp in experiences.filter(function (item) { return !item.compact }).slice().reverse()"
+                                :key="exp.date + exp.company"
+                            >
+                                <article
+                                    class="experience-card print-break-avoid"
+                                    :class="{ current: exp.current }"
+                                >
                                     <div
-                                        class="flex flex-wrap items-center gap-2 mb-1"
+                                        class="flex flex-col justify-between gap-3 sm:flex-row sm:items-start"
                                     >
-                                        <span
-                                            class="badge badge-outline badge-sm"
+                                        <div>
+                                            <div class="flex flex-wrap items-center gap-2">
+                                                <h3
+                                                    class="text-xl font-black tracking-tight"
+                                                    x-text="exp.company"
+                                                ></h3>
+                                                <template x-if="exp.current">
+                                                    <span
+                                                        class="rounded-full px-2.5 py-1 text-[0.65rem] font-black uppercase tracking-widest text-white"
+                                                        style="background: var(--teal)"
+                                                        >Current</span
+                                                    >
+                                                </template>
+                                            </div>
+                                            <p
+                                                class="mt-1 font-bold"
+                                                style="color: var(--accent-strong)"
+                                                x-text="exp.role"
+                                            ></p>
+                                        </div>
+                                        <time
+                                            class="chip shrink-0"
                                             x-text="exp.date"
-                                        ></span>
-                                        <span
-                                            class="font-semibold text-base"
-                                            x-text="exp.company"
-                                        ></span>
-                                        <span class="opacity-50">·</span>
-                                        <span
-                                            class="italic text-primary text-sm"
-                                            x-text="exp.role"
-                                        ></span>
+                                        ></time>
                                     </div>
 
                                     <p
-                                        class="text-sm text-base-content/80"
+                                        class="muted mt-4 text-sm leading-6"
                                         x-text="exp.description"
                                     ></p>
 
-                                    <!-- Activities -->
-                                    <template x-if="exp.activities.length > 0">
+                                    <template x-if="exp.activities.length">
                                         <ul
-                                            class="mt-2 list-disc pl-5 space-y-1 text-sm text-base-content/80"
+                                            class="achievement-list muted mt-4 list-disc space-y-2 pl-5 text-sm leading-6"
                                         >
                                             <template
-                                                x-for="(act, ai) in exp.activities"
-                                                :key="ai"
+                                                x-for="activity in exp.activities"
+                                                :key="activity"
                                             >
-                                                <li x-text="act"></li>
+                                                <li x-text="activity"></li>
                                             </template>
                                         </ul>
                                     </template>
 
-                                    <!-- Tech Stack -->
-                                    <template x-if="exp.techStack.length > 0">
-                                        <div class="mt-3 flex flex-wrap gap-1">
-                                            <template
-                                                x-for="tech in exp.techStack"
-                                                :key="tech"
-                                            >
-                                                <span
-                                                    class="badge badge-xs badge-ghost"
-                                                    x-text="tech"
-                                                ></span>
-                                            </template>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
+                                    <div class="mt-5 flex flex-wrap gap-1.5">
+                                        <template x-for="tech in exp.techStack" :key="tech">
+                                            <span class="chip" x-text="tech"></span>
+                                        </template>
+                                    </div>
+                                </article>
+                            </template>
                         </div>
-                    </template>
-                </div>
-            </section>
+                    </section>
 
-            <!-- Open Source Projects -->
-            <section aria-labelledby="oss-title" class="print-break-avoid">
-                <h2
-                    id="oss-title"
-                    class="text-lg font-semibold uppercase tracking-wide opacity-70"
-                >
-                    Open Source
-                </h2>
-
-                <div class="mt-4 space-y-4">
-                    <template
-                        x-for="project in openSourceProjects"
-                        :key="project.name"
-                    >
+                    <section class="mt-12" aria-labelledby="earlier-title">
+                        <p class="eyebrow">Foundations</p>
+                        <h2
+                            id="earlier-title"
+                            class="mt-2 text-2xl font-black tracking-tight"
+                        >
+                            Earlier experience
+                        </h2>
                         <div
-                            class="card bg-base-100 shadow-sm border border-base-200"
+                            class="mt-5 divide-y rounded-2xl border"
+                            style="border-color: var(--line)"
                         >
-                            <div class="card-body p-4 sm:p-5">
-                                <div
-                                    class="flex flex-wrap items-center gap-2 mb-1"
+                            <template
+                                x-for="exp in experiences.filter(function (item) { return item.compact }).slice().reverse()"
+                                :key="exp.date + exp.company"
+                            >
+                                <article
+                                    class="grid gap-2 px-5 py-4 sm:grid-cols-[7rem_1fr] print-break-avoid"
+                                    style="border-color: var(--line)"
                                 >
-                                    <span
-                                        class="font-semibold text-base"
-                                        x-text="project.name"
-                                    ></span>
-                                    <a
-                                        :href="project.url"
-                                        target="_blank"
-                                        rel="noopener"
-                                        class="badge badge-primary badge-outline badge-sm no-print"
-                                    >
-                                        Hex.pm
-                                    </a>
-                                    <a
-                                        :href="project.repo"
-                                        target="_blank"
-                                        rel="noopener"
-                                        class="badge badge-outline badge-sm no-print"
-                                    >
-                                        GitHub
-                                    </a>
-                                    <span
-                                        class="text-xs opacity-50"
-                                        x-text="project.stats"
-                                    ></span>
-                                </div>
+                                    <time
+                                        class="muted text-sm font-bold"
+                                        x-text="exp.date"
+                                    ></time>
+                                    <div>
+                                        <h3 class="font-black">
+                                            <span x-text="exp.company"></span>
+                                            <span class="muted font-medium"> · </span>
+                                            <span
+                                                class="font-semibold"
+                                                style="color: var(--accent-strong)"
+                                                x-text="exp.role"
+                                            ></span>
+                                        </h3>
+                                        <p
+                                            class="muted mt-1 text-sm leading-6"
+                                            x-text="exp.description"
+                                        ></p>
+                                    </div>
+                                </article>
+                            </template>
+                        </div>
+                    </section>
 
-                                <p
-                                    class="text-sm text-base-content/80"
-                                    x-text="project.description"
-                                ></p>
-
-                                <div class="mt-2 flex flex-wrap gap-1">
-                                    <template
-                                        x-for="tech in project.techStack"
-                                        :key="tech"
-                                    >
-                                        <span
-                                            class="badge badge-xs badge-ghost"
-                                            x-text="tech"
-                                        ></span>
+                    <section class="beyond-code glass mt-12 rounded-3xl p-6 sm:p-8 print-break-avoid">
+                        <p class="eyebrow">Beyond the code</p>
+                        <div class="mt-5 grid gap-7 sm:grid-cols-2">
+                            <div>
+                                <h2 class="text-lg font-black">Always learning</h2>
+                                <p class="muted mt-2 text-sm leading-6">
+                                    Open-source tools, thoughtful software design, and the craft behind systems that last.
+                                </p>
+                                <ul class="muted mt-3 space-y-1 text-sm">
+                                    <template x-for="book in favoriteBooks" :key="book">
+                                        <li>— <span x-text="book"></span></li>
                                     </template>
-                                    <span
-                                        class="badge badge-xs badge-outline"
-                                        x-text="project.license"
-                                    ></span>
+                                </ul>
+                            </div>
+                            <div>
+                                <h2 class="text-lg font-black">Away from the screen</h2>
+                                <div class="mt-3 flex flex-wrap gap-2">
+                                    <template x-for="hobby in hobbies" :key="hobby">
+                                        <span class="chip" x-text="hobby"></span>
+                                    </template>
                                 </div>
                             </div>
                         </div>
-                    </template>
+                    </section>
                 </div>
-            </section>
-
-            <!-- Tools & Environment -->
-            <section aria-labelledby="tools-title" class="print-break-avoid">
-                <h2
-                    id="tools-title"
-                    class="text-lg font-semibold uppercase tracking-wide opacity-70"
-                >
-                    Tools & Environment
-                </h2>
-                <div class="mt-4 flex flex-wrap gap-2">
-                    <template x-for="tool in tools" :key="tool">
-                        <span class="badge badge-outline" x-text="tool"></span>
-                    </template>
-                </div>
-            </section>
-
-            <!-- Beyond Code -->
-            <section aria-labelledby="beyond-title" class="print-break-avoid">
-                <h2
-                    id="beyond-title"
-                    class="text-lg font-semibold uppercase tracking-wide opacity-70"
-                >
-                    Beyond Code
-                </h2>
-                <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-6">
-                    <!-- Languages -->
-                    <div>
-                        <h3 class="text-sm font-medium opacity-60 mb-2">
-                            Languages
-                        </h3>
-                        <div class="flex flex-wrap gap-2">
-                            <template
-                                x-for="lang in humanLanguages"
-                                :key="lang"
-                            >
-                                <span
-                                    class="badge badge-outline badge-sm"
-                                    x-text="lang"
-                                ></span>
-                            </template>
-                        </div>
-                    </div>
-
-                    <!-- Hobbies -->
-                    <div>
-                        <h3 class="text-sm font-medium opacity-60 mb-2">
-                            Hobbies
-                        </h3>
-                        <div class="flex flex-wrap gap-2">
-                            <template x-for="hobby in hobbies" :key="hobby">
-                                <span
-                                    class="badge badge-ghost badge-sm"
-                                    x-text="hobby"
-                                ></span>
-                            </template>
-                        </div>
-                    </div>
-
-                    <!-- Favorite Books -->
-                    <div>
-                        <h3 class="text-sm font-medium opacity-60 mb-2">
-                            Favorite Books
-                        </h3>
-                        <ul
-                            class="list-disc pl-5 text-sm space-y-1 text-base-content/80"
-                        >
-                            <template x-for="book in favoriteBooks" :key="book">
-                                <li x-text="book"></li>
-                            </template>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            </div>
         </main>
 
-        <!-- Footer -->
-        <footer
-            class="border-t border-base-200 bg-base-200/40 print:bg-transparent print:border-0"
-        >
-            <div class="max-w-3xl mx-auto px-4 py-8 text-center space-y-4">
-                <!-- CTA -->
-                <div class="no-print">
-                    <h2 class="text-lg font-semibold">Let's Connect</h2>
+        <footer class="border-t px-4 py-8 sm:px-6" style="border-color: var(--line)">
+            <div
+                class="muted mx-auto flex max-w-6xl flex-col justify-between gap-3 text-sm sm:flex-row sm:items-center"
+            >
+                <p>
+                    <span x-text="author"></span> ·
                     <a
-                        class="btn btn-primary btn-sm mt-2"
-                        href="mailto:erik@erikhu.com"
-                    >
-                        <svg
-                            class="h-4 w-4"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                        >
-                            <path
-                                d="M1.5 6.75A2.25 2.25 0 0 1 3.75 4.5h16.5a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 20.25 19.5H3.75A2.25 2.25 0 0 1 1.5 17.25V6.75Zm2.7-.75a.75.75 0 0 0-.45 1.35l7.2 5.4a.75.75 0 0 0 .9 0l7.2-5.4a.75.75 0 0 0-.45-1.35H4.2Z"
-                            />
-                        </svg>
-                        erik@erikhu.com
-                    </a>
-
-                    <!-- Social icons -->
-                    <div class="mt-3 flex justify-center gap-2">
-                        <a
-                            href="https://www.linkedin.com/in/erik-alexander-gonzalez-cardona-b7b03a118"
-                            target="_blank"
-                            rel="noopener"
-                            class="btn btn-sm btn-ghost btn-square"
-                            aria-label="LinkedIn"
-                        >
-                            <svg
-                                class="h-5 w-5 fill-current"
-                                role="img"
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                            >
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                                />
-                            </svg>
-                        </a>
-                        <a
-                            href="https://github.com/erikhu"
-                            target="_blank"
-                            rel="noopener"
-                            class="btn btn-sm btn-ghost btn-square"
-                            aria-label="GitHub"
-                        >
-                            <svg
-                                class="h-5 w-5 fill-current"
-                                role="img"
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                            >
-                                <path
-                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                                />
-                            </svg>
-                        </a>
-                        <a
-                            href="https://play.google.com/store/apps/developer?id=Policodigo"
-                            target="_blank"
-                            rel="noopener"
-                            class="btn btn-sm btn-ghost btn-square"
-                            aria-label="Google Play"
-                        >
-                            <svg
-                                class="h-5 w-5 fill-current"
-                                role="img"
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                            >
-                                <path
-                                    d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"
-                                />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <p class="text-sm opacity-70">
-                    Last updated: <span x-text="last_updated"></span>
+                        :href="'mailto:' + email"
+                        class="font-bold"
+                        style="color: var(--ink)"
+                        x-text="email"
+                    ></a>
                 </p>
+                <p>Last updated <span x-text="last_updated"></span></p>
             </div>
         </footer>
     </body>

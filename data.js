@@ -1,9 +1,27 @@
 var dataJson = {
   author: "Erik Gonzalez",
   currentRole: "Senior Software Engineer",
-  tagline: "From Anywhere · Open to opportunities",
+  headline: "Enterprise AI & Distributed Systems",
+  tagline: "Based in Estonia · Building reliable software from anywhere",
   email: "erik@erikhu.com",
   avatar: "avatar.jpg",
+  summary:
+    "I design and deliver secure, production-grade platforms across enterprise AI, distributed systems, and real-time products. I work from architecture to operations, with a focus on clear boundaries, resilient integrations, and software teams can confidently evolve.",
+  focusAreas: ["Enterprise AI", "Elixir & Python", "Platform engineering"],
+  impactHighlights: [
+    {
+      value: "AI",
+      label: "Enterprise assistant platform led from architecture to production",
+    },
+    {
+      value: "Millions",
+      label: "Monthly transactions supported in high-volume systems",
+    },
+    {
+      value: "600+",
+      label: "Commits delivered across two products in five months",
+    },
+  ],
   pullQuote:
     "I believe that the best teams are those where everyone feels safe asking 'dumb questions,' where feedback is honest and kind, and where we push each other to do better—not for ego, but for pride in our craft.",
   last_updated: "2026-08-18",
@@ -37,6 +55,24 @@ var dataJson = {
     "Codex",
     "Claude",
     "Hermes",
+  ],
+  capabilityGroups: [
+    {
+      name: "AI platforms & agents",
+      items: ["Python", "Agno AgentOS", "Claude", "AWS Bedrock", "MCP"],
+    },
+    {
+      name: "Backend & distributed systems",
+      items: ["Elixir", "Phoenix", "PostgreSQL", "GraphQL", "RabbitMQ"],
+    },
+    {
+      name: "Security & integrations",
+      items: ["Access control", "JWT", "Keycloak", "S3", "Audit logging"],
+    },
+    {
+      name: "Infrastructure & delivery",
+      items: ["Docker", "CI/CD", "Observability", "Automated testing"],
+    },
   ],
   aiTools: [
     "Claude Code",
@@ -74,6 +110,7 @@ var dataJson = {
         "Provided technical support for company systems at a Colombian firm.",
       activities: [],
       techStack: [],
+      compact: true,
     },
     {
       date: "2015",
@@ -91,6 +128,7 @@ var dataJson = {
         "CSS",
         "Git",
       ],
+      compact: true,
     },
     {
       date: "2017",
@@ -120,13 +158,14 @@ var dataJson = {
         "Material Design",
         "Git",
       ],
+      compact: true,
     },
     {
       date: "2020 - 2022",
       company: "PicallEx",
       role: "Full-Stack",
       description:
-        "As a Full-Stack developer, I created several in-house projects, improved code quality, and added new features. These projects were built to meet company standards using unit and integration tests.",
+        "Built and maintained in-house web, mobile, CRM, API, and real-time telephony products across the full stack.",
       activities: [
         "I am responsible for maintaining the API used by in-house projects and partner companies. I continuously contribute to the CRM, the company's main project. I built the mobile app that helps drivers with deliveries and an in-house telephony panel using modern technologies for real-time and concurrent processes.",
       ],
@@ -152,8 +191,12 @@ var dataJson = {
       company: "Yolo Group - Hub88",
       role: "Elixir Backend",
       description:
-        "I'm part of the core team with a broad view of the business and related projects. My main focus has been contributing to and keeping our core project stable—a game aggregator that handles millions of transactions per month. I've also contributed to our back-office projects, integrating technologies like GraphQL, RabbitMQ, and Keycloak, and extending the domain logic. As part of the core team, I also support our Tech Ops team during critical situations. Furthermore, I've contributed to the design of new highly scalable projects.",
-      activities: [],
+        "Core backend engineer responsible for the stability and evolution of a high-volume game aggregation platform and its supporting systems.",
+      activities: [
+        "Helped keep a game aggregator processing millions of transactions per month stable.",
+        "Extended back-office domain logic and integrations using GraphQL, RabbitMQ, and Keycloak.",
+        "Supported Tech Ops during critical incidents and contributed to scalable system designs.",
+      ],
       techStack: [
         "Elixir",
         "RabbitMQ",
@@ -171,8 +214,12 @@ var dataJson = {
       company: "Yolo Group - Partners.io",
       role: "Senior Software Engineer",
       description:
-        "As part of the Partners.io team, I'm responsible for planning and delivering projects, and I handle management tasks such as onboarding another senior engineer to the projects we are assigned. I also help maintain a platform that handles a high volume of transactions from different brands, ensuring seamless integration and efficient processing. Additionally, I safeguard the codebase by enforcing best practices and agreed coding standards. I took ownership of a legacy project with no dedicated team that was still in production and modernized it to reactivate it for development purposes. My role on the team is primarily full‑stack, contributing to every part of the project—from backend to frontend—to ensure a seamless user experience. I also have the opportunity to mentor junior engineers and provide guidance on best practices and coding standards.",
-      activities: [],
+        "Led full-stack delivery and engineering quality across high-volume partner products, balancing hands-on development with team enablement.",
+      activities: [
+        "Planned and delivered projects across backend and frontend while maintaining a high-volume, multi-brand transaction platform.",
+        "Modernized a production legacy project with no dedicated team and restored it to active development.",
+        "Onboarded and mentored engineers while reinforcing agreed engineering and code-quality standards.",
+      ],
       techStack: [
         "Elixir",
         "Docker",
@@ -187,8 +234,12 @@ var dataJson = {
       company: "Bombay Group",
       role: "Senior Software Engineer",
       description:
-        "Developed and maintained two Elixir/Phoenix applications as part of the core engineering team. Built GraphQL APIs using Absinthe, implementing JWT authentication (ES256), API key management with SHA-256 hashing, real-time subscriptions, audit logging, and tier-based access control. Migrated third-party integrations including Google reCAPTCHA Enterprise and payment providers. Designed database schemas, migrations, and domain logic following DDD patterns. On the admin dashboard side, built interactive features with Phoenix LiveView and Surface components, including real-time forms with file uploads, dynamic filtering, and compliance enforcement across nested views. Led framework upgrades (Phoenix 1.8, LiveView 1.1.17, EEx to HEEx migration) and maintained CI/CD pipelines on CircleCI with Dialyzer static analysis and Credo for code quality. Integrated external services such as ExAws/S3 and Slack, and configured iOS universal links. Contributed over 600 commits across both projects in a five-month period.",
-      activities: [],
+        "Developed two security-sensitive Elixir/Phoenix products spanning GraphQL APIs, real-time administration workflows, integrations, and platform upgrades.",
+      activities: [
+        "Built GraphQL APIs with JWT authentication, hashed API keys, real-time subscriptions, audit logging, and tier-based access control.",
+        "Delivered LiveView and Surface workflows for uploads, dynamic filtering, and compliance enforcement.",
+        "Led Phoenix and LiveView upgrades, maintained CI/CD and static analysis, and contributed more than 600 commits across two products.",
+      ],
       techStack: [
         "Elixir",
         "Phoenix Framework",
@@ -211,8 +262,12 @@ var dataJson = {
       company: "IOENT",
       role: "Senior Software Engineer",
       description:
-        "Led the development of a production-grade enterprise AI assistant platform using Python, Elixir/Phoenix, Agno AgentOS, Claude, AWS Bedrock, and Model Context Protocol (MCP), providing natural-language access to authorized tools and data through chat, web, and CLI interfaces. Implemented persistent conversations, real-time response streaming, secure file processing, document generation, access controls, resilient service integrations, observability, comprehensive automated testing, and Docker-based CI/CD while maintaining clear security and privacy boundaries.",
-      activities: [],
+        "Led the development of a production-grade enterprise AI assistant platform built with Python, Elixir/Phoenix, Agno AgentOS, Claude, AWS Bedrock, and MCP.",
+      activities: [
+        "Provided natural-language access to authorized tools and data through chat, web, and CLI interfaces.",
+        "Implemented persistent conversations, real-time streaming, secure file processing, and document generation.",
+        "Established access controls, resilient integrations, observability, automated testing, and Docker-based CI/CD with clear security and privacy boundaries.",
+      ],
       techStack: [
         "Python",
         "Elixir",
@@ -224,6 +279,7 @@ var dataJson = {
         "Docker",
         "CI/CD",
       ],
+      current: true,
     },
   ],
 };
